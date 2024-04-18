@@ -5,17 +5,16 @@
  * @date: 2024-04-17 
  */
 #include <bits/stdc++.h>
+#define ll long long;
 
 using namespace std;
 
 void solve()
 {
-   long long n,k,ret=0;
+   int n,k;
    cin>>n>>k;
-   for(int i=n;1;i++)
-   {
+   cout<<(n+n/k)/k+k;
 
-   }
 }
 int main()
 {
