@@ -13,13 +13,13 @@ void solve()
 {
    int n,k;
    cin>>n>>k;
-   cout<<(n+n/k)/k+k;
+   cout<<(k+k/n)/n+k<<endl;
 
 }
 int main()
 {
    int t=1;
-   // cin>>t;
+   cin>>t;
    while(t--)
    {
       solve();
