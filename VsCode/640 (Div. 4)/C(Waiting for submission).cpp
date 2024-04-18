@@ -13,7 +13,7 @@ void solve()
 {
    int n,k;
    cin>>n>>k;
-   cout<<(k+k/n)/n+k<<endl;
+   cout<<(k-1)/(n-1)+k<<endl;
 
 }
 int main()
