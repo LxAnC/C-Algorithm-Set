@@ -6,22 +6,46 @@
  */
 //手搓一个单链表
 #include <bits/stdc++.h>
-
+// typedef  i;
 using namespace std;
-
+//定义数据结构
 typedef struct LinkNode{
-  int data;
-   LinkNode *next;
-}*a;
+   int data;
+   struct LinkNode *next;
+}*Linknode;
+
+void printLink(LinkNode* &a)
+{
+  Linknode p=new LinkNode;
+  Linknode ptr=a->next;
+  while(ptr!=nullptr)
+  {
+    cout<<ptr->data<<' ';
+    ptr=ptr->next;
+  }
+}
+ LinkNode CreateLink()
+ {
+    LinkNode* head=nullptr;
+    LinkNode* tail=nullptr;
+    int x;
+    while(cin>>x)
+    {
+        Linknode a1=new LinkNode;
+        if(a1!=nullptr)
+       { a1->data=x;
+        a1->next=nullptr;}
+        tail->next=a1;
+        tail=a1;
+    }
+    printLink()
+ }
+
+
+
 int main()
 {
    //构造一个单链表
-  a n=new LinkNode;
-  a n1=new LinkNode;
-  n1->data=3;
-  n->data=2;
-  n->next=n1;
-
-   cout<<n->next->data<<endl;
+    CreateLink();
    return 0;
 }
