@@ -11,11 +11,14 @@ using namespace std;
 int main()
 {
   char ch[20000];
-  string s;
+  string *s, *stringted;
   int n, x;
-  getline(cin,s);
+  cin >> x;
+  cout << oct << x << endl;
+  cout << hex << x << endl;
+  cout << dec << x << endl;
+  // cout<<bin<<x<<endl;//无法使用C++因为没有自带的,所以要用itoa
 
-  strtol(ch,x,2);
   // itoa(x, ch, 2);
   // for (int i = 0; ch[i] != '\0'; i++)  //测试十进制转任意进制
   //   cout << ch[i];
