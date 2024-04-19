@@ -10,6 +10,14 @@ using namespace std;
 
 int main()
 {
+   priority_queue<int>d;
+   int n,x;
+   while (n--)
+   {
+      cin>>x;
+      d.push(x);
+   }
+   
    
    return 0;
 }
