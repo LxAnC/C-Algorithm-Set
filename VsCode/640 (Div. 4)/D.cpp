@@ -8,9 +8,10 @@
 
 using namespace std;
 
+// 还是有些案例过不了
 void solve()
 {
-   int num,ret=0;
+   int num, ret = 0;
    cin >> num;
    vector<int> c(num);
    for (int i = 0; i < num; i++)
@@ -23,7 +24,7 @@ void solve()
       // 统计每一轮吃的糖果数
       int currl = 0, currr = 0;
       // 左边的糖果
-      while (currl <= current_candy&&left<=right) // 判断当前糖果是否满足要求
+      while (currl <= current_candy && left <= right) // 判断当前糖果是否满足要求
       {
          currl += c[left++];
       }
@@ -31,7 +32,7 @@ void solve()
       count_candy -= currl; // 总数减去左边吃的糖果;
       left2 += currl;       // 统计左边吃过的糖果
       current_candy = currl;
-      while (currr <= current_candy&&right>left)
+      while (currr <= current_candy && right > left)
       {
          currr += c[right--];
       }
@@ -40,7 +41,7 @@ void solve()
       current_candy = currr;
       ret++;
    }
-   cout<<ret<<" "<<left2<<" "<<right2<<endl;
+   cout << ret << " " << left2 << " " << right2 << endl;
 }
 int main()
 {
