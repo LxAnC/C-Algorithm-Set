@@ -8,6 +8,39 @@
 
 using namespace std;
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int t,n,a[1001];
+// int main(){
+// 	cin>>t;
+// 	while(t--){
+// 		cin>>n;
+// 		for(int i=1;i<=n;i++)cin>>a[i];
+// 		int l=2,r=n,slnow=a[1],srnow=0,sl=a[1],sr=0,step=1;
+// 		bool flag=1;
+// 		while(l<=r){
+// 			step++;
+// 			if(flag){
+// 				while(l<=r&&srnow<=slnow){
+// 					srnow+=a[r];
+// 					sr+=a[r];
+// 					r--;
+// 				}
+// 				flag=0,slnow=0;
+// 			}
+// 			else{
+// 				while(l<=r&&slnow<=srnow){
+// 					slnow+=a[l];
+// 					sl+=a[l];
+// 					l++;
+// 				}
+// 				flag=1,srnow=0;
+// 			}
+// 		}
+// 		cout<<step<<" "<<sl<<" "<<sr<<endl;
+// 	}
+// 	return 0;
+// }
 // 还是有些案例过不了
 void solve()
 {
