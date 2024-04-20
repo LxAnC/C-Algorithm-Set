@@ -23,12 +23,11 @@ void solve()
     {
       sum = 0;
       int b=j;
-      while (sum < s[i])
+      while (sum < s[i]&&b<n)
       {
-        if(b<n)
-        {if(i==b||s[i]==s[b])
+        if(i==b||s[i]==s[b])
        { b++;break;}
-        sum+=s[b++];}
+        sum+=s[b++];
 
       }
       if(sum>s[i])
