@@ -44,37 +44,29 @@ using namespace std;
 // 还是有些案例过不了
 void solve()
 {
-   int num, ret = 0;
-   cin >> num;
-   vector<int> c(num);
-   for (int i = 0; i < num; i++)
-      cin >> c[i];
-   int count_candy = accumulate(c.begin(), c.end(), 0);
-   int left = 0, right = num - 1, current_candy = 0, left2 = 0, right2 = 0;
-
-   while (count_candy > current_candy && left <= right)
+   int n,a,b,c=0,suma=0,sumb=0,step=0;
+   cin>>n;
+   vector<int>s(n);
+   for(int i=0;i<n;i++)
+   cin>>s[i];
+   int l=0,r=n-1;
+   while(suma+sumb!=accumulate(s.begin(),s.end(),0))
    {
-      // 统计每一轮吃的糖果数
-      int currl = 0, currr = 0;
-      // 左边的糖果
-      while (currl <= current_candy && left <= right) // 判断当前糖果是否满足要求
+      a=0,b=0;
+      while(a<=c&&left<=right)
       {
-         currl += c[left++];
+         a+=s[l++];
       }
-      ret++;
-      count_candy -= currl; // 总数减去左边吃的糖果;
-      left2 += currl;       // 统计左边吃过的糖果
-      current_candy = currl;
-      while (currr <= current_candy && right > left)
+      if(a!=0)
+      step++,c=a,suma+=a;
+      while(b<=c&&right>=left)
       {
-         currr += c[right--];
+         b+=s[r--];
       }
-      count_candy -= currr;
-      right2 += currr; // 统计左边吃过的糖果
-      current_candy = currr;
-      ret++;
+      if(b)
+      step++,c=b,sumb+=b;
    }
-   cout << ret << " " << left2 << " " << right2 << endl;
+   cout<<step<<' '<<suma<<' '<<sumb<<endl;
 }
 int main()
 {
