@@ -22,11 +22,12 @@ void solve()
     for (int j = 0; j < n; j++)
     {
       sum = 0;
+      int b=j;
       while (sum < s[i])
       {
-        if(i==j)
-       { j++;break;}
-        sum+=s[j++];
+        if(i==b||s[i]==s[b])
+       { b++;break;}
+        sum+=s[b++];
 
       }
       if(sum>s[i])
