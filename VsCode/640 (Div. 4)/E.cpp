@@ -25,9 +25,10 @@ void solve()
       int b=j;
       while (sum < s[i])
       {
-        if(i==b||s[i]==s[b])
+        if(b<n)
+        {if(i==b||s[i]==s[b])
        { b++;break;}
-        sum+=s[b++];
+        sum+=s[b++];}
 
       }
       if(sum>s[i])
