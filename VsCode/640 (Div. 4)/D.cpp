@@ -27,10 +27,11 @@ void solve()
       {
          currl += c[left++];
       }
+      ret++;
       count_candy -= currl; // 总数减去左边吃的糖果;
       left2 += currl;       // 统计左边吃过的糖果
       current_candy = currl;
-      while (currr <= current_candy&&right>=left)
+      while (currr <= current_candy&&right>left)
       {
          currr += c[right--];
       }
