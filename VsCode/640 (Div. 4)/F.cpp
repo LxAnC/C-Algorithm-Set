@@ -46,12 +46,26 @@ void solve()
        ret+=ch;
     }
   }
-  while(n--)
+  while(n)
   {
     if(ret[0]=='0')
     ret="0"+ret;
-    else
+    else if(ret.back()=='0')
     ret+="0";
+    else
+    {
+      int b=2;
+      while(b<ret.size())
+      {
+        if(ret[b-1]=='0'&&ret[b]=='0'&&n)
+        {ret.insert(b-1,"0");
+        n--;}
+        cout<<ret<<endl;
+        b++;
+        
+      }
+    }
+    n--;
   }
   cout<<ret<<endl;
 }
