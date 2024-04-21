@@ -5,7 +5,7 @@
  * @date: 2024-04-20
  */
 #include <bits/stdc++.h>
-
+#define  MM 8e3+1;
 using namespace std;
 // void solve()
 // {
@@ -42,7 +42,31 @@ using namespace std;
 //   cout << ret << endl;
 // }
 void solve(){
+  int n,ret=0;
+  int a[8001]={0};
+  cin>>n;
+  vector<int>s(n);
+  for (int i = 0; i < n; i++)
+  {
+    cin>>s[i];
+  }
   
+  for(int i=0;i<n;i++)
+  {
+    int sum=0;
+  for(int j=0;j<n;j++)
+  {
+      sum+=s[j];
+      if(sum<=n)
+      {
+        a[sum]++;
+      }
+        
+  }}
+  for(int i=0;i<n;i++)
+    if(a[i])
+    ret++;
+    cout<<ret<<endl;
 }
 int main()
 {
