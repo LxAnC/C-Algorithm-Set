@@ -48,6 +48,9 @@ void solve()
   }
   while(n--)
   {
+    if(ret[0]=='0')
+    ret="0"+ret;
+    else
     ret+="0";
   }
   cout<<ret<<endl;
