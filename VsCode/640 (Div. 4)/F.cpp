@@ -46,6 +46,10 @@ void solve()
        ret+=ch;
     }
   }
+  while(n--)
+  {
+    ret+="0";
+  }
   cout<<ret<<endl;
 }
 int main()
