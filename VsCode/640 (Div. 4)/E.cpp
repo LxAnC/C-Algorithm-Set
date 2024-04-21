@@ -65,7 +65,7 @@ void solve(){
         
   }}
   for(int i=0;i<n;i++)
-    if(a[i])
+    if(a[s[i]])
     ret++;
     cout<<ret<<endl;
 }
