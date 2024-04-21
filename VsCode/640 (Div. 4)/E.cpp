@@ -4,6 +4,8 @@
  * @author: LxAnC
  * @date: 2024-04-20
  */
+//注释的部分是第一次写的代码,没注意数据范围,前缀和还要多练
+//正式代码直接ac
 #include <bits/stdc++.h>
 #define  MM 8e3+1;
 using namespace std;
