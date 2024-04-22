@@ -16,12 +16,11 @@ void solve()
   if (n1 == 0)
   {
     if (n0 == 0)
-      cout << string(n2 + 1, '1');
+      cout << string(n2 + 1, '1')<<endl;
     else
-      cout << string(n0 + 1, '0');
+      cout << string(n0 + 1, '0')<<endl;
     return;
   }
-  else
     for (int i = 0; i < n1 + 1; i++)
     {
       if (i & 1)
@@ -29,8 +28,8 @@ void solve()
       else
         ret += "1";
     }
-  ret.insert(1, string(n2, '0'));
-  ret.insert(0, string(n1, '1'));
+  ret.insert(1, string(n0, '0'));
+  ret.insert(0, string(n2, '1'));
   cout << ret << endl;
 }
 int main()
