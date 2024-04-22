@@ -46,6 +46,7 @@ void solve()
        ret+=ch;
     }
   }
+       int b=2; 
   while(n)
   {
     if(ret[0]=='0')
@@ -54,13 +55,12 @@ void solve()
     ret+="0";
     else
     {
-      int b=2;
+
       while(b<ret.size())
       {
         if(ret[b-1]=='0'&&ret[b]=='0'&&n)
         {ret.insert(b-1,"0");
         n--;}
-        cout<<ret<<endl;
         b++;
         
       }
