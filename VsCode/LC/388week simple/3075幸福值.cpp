@@ -4,20 +4,24 @@
  * @author: LxAnC
  * @date: 2024-04-22 
  */
+
 // class Solution {
 // public:
 //     long long maximumHappinessSum(vector<int>& happiness, int k) {
-//         int n=happiness.size();
+//         long long n=happiness.size();
 //         ranges::sort(happiness);
-//         int sum=0,i=n-1;
-//         //贪心
-//         int b=k;
-//         while(k--)
+//         long long sum=0;
+//         long long m=1;
+//         for(int i=n-2;i>=0;i--)
 //         {
-//             sum+=happiness[i];
-//             i--;
+//             if(happiness[i]-m>=0)
+//             happiness[i]-=m++;
+//             else
+//             happiness[i]=0;
 //         }
-//         return sum-(b-1);
+//         for(int i=n-1;i>=n-k;i--)
+//         sum+=happiness[i];
+//         return sum;
 //     }
 // };
 //值得学习
