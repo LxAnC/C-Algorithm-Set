@@ -20,3 +20,15 @@
 //         return sum-(b-1);
 //     }
 // };
+//值得学习
+class Solution {
+public:
+    long long maximumHappinessSum(vector<int> &happiness, int k) {
+        ranges::sort(happiness, greater<>());
+        long long ans = 0;
+        for (int i = 0; i < k && happiness[i] > i; i++) {
+            ans += happiness[i] - i;
+        }
+        return ans;
+    }
+};
