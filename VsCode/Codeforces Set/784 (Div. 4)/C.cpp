@@ -10,7 +10,7 @@ using namespace std;
 void solve()
 {
   int n, x, k, m;
-  string ret="YES";
+  string ret = "YES";
   cin >> n;
   for (int i = 0; i < n; i++)
   {
@@ -21,20 +21,22 @@ void solve()
       m = x & 1;
     if (i & 1)
     {
-      if (x & 1 != m)
-       ret="NO";
+      if ((x & 1) != m)
+        ret = "NO";
     }
     else
     {
-      if (x & 1 != k)
-        ret="NO";
+      if ((x & 1) != k)
+        ret = "NO";
     }
   }
-  cout<<ret<<endl;
+  cout << ret << endl;
+  return;
 }
 int main()
 {
   int t;
+  cin >> t;
   while (t--)
   {
     solve();
