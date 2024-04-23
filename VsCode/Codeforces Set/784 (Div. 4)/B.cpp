@@ -8,8 +8,7 @@
 using namespace std;
 void solve()
 {
-  int n, x;
-  
+  int n, x,ret=-1;
   cin >> n;
   int hash[200001] = {0};
   for (int i = 0; i < n; i++)
@@ -18,10 +17,9 @@ void solve()
     hash[x] += 1;
     if (hash[x] == 3)
     {
-      cout << x;
-      return;
+      ret=x;
     }
-  }cout << -1;
+  }cout << ret<<endl;
 }
 int main()
 {
