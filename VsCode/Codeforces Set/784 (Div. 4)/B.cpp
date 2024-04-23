@@ -9,13 +9,9 @@ using namespace std;
 void solve()
 {
   int n, x;
-  int hash[200001] = {0};
+  
   cin >> n;
-  if (n < 3)
-  {
-    cout << -1;
-    return;
-  }
+  int hash[200001] = {0};
   for (int i = 0; i < n; i++)
   {
     cin >> x;
@@ -25,7 +21,7 @@ void solve()
       cout << x;
       return;
     }
-  }
+  }cout << -1;
 }
 int main()
 {
