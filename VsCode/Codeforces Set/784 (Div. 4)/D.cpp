@@ -4,47 +4,35 @@
  * @author: LxAnC
  * @date: 2024-04-24
  */
-#include <bits/stdc++.h>
-
+#include<iostream>
 using namespace std;
-void solve()
-{
-  int n;
-  string s;
-  int flag = 0;
-  cin >> n;
-  cin >> s;
-  int r = 0, b = 0;
-  for (int i = 0; i < n; i++)
-  {
-    if (s[i] == 'R')
-      r++;
-    else if (s[i] == 'B')
-      b++;
-    else
-    {
-      if (r == 0 || b == 0)
-      {
-        flag = 1;
-      }
-      r = 0;
-      b = 0;
-    }
-  }
-  if (flag == 0 && s[n - 1] == 'W')
-  {
-    flag = 0;
-  }
-  string ret = (flag == 0) ? "Yes" : "NO" ;
-  cout << ret << endl;
-}
+
+int n,t;
+string s;
+
 int main()
 {
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    solve();
-  }
-  return 0;
-}
+	cin>>t; 
+	
+	while(t--)
+	{
+		cin>>n>>s;
+		bool flag = true;
+		for(int i = 0;i < s.size();i++)
+		{
+			if(s[i] != 'W') 
+			{
+				int j = i;
+				while(s[j] == s[i] && j < s.size()) j++;
+				if((j == s.size() || s[j] == 'W') && (i == 0 || s[i-1] == 'W'))
+				{
+					flag = false;
+					break;	
+				}	
+				i = max(i,j-1);		
+			}
+		}
+		if(flag)puts("YES");
+		else puts("NO");
+	}
+} 
