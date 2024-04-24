@@ -13,30 +13,24 @@ void solve()
   string s;
   string ret = "Yes";
   cin >> n;
-  getline(cin,s);
-  getline(cin,s);
+  getline(cin, s);
+  getline(cin, s);
   int r = 0, b = 0;
   for (int i = 0; i < n; i++)
   {
-    if (s[i] == 'W')
+    if (s[i] == 'R')
+      r++;
+    else if (s[i] == 'B')
+      b++;
+    else
     {
-      if(r==0||b==0)
-      {
-        ret="NO";
-        break;
-      }
-      r=0,b=0;
+      if (r == 0 || b == 0)
+        ret = "NO";
+      r = 0, b = 0;
     }
-    else if(s[i]=='R')
-    r++;
-    else 
-    b++;
-
   }
-  if(r==0||b==0)
-      {
-        ret="NO";
-      }
+  if (r == 0 || b == 0)
+    ret = "NO";
   cout << ret << endl;
 }
 int main()
