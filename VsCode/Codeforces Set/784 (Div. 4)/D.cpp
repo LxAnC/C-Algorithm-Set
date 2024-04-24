@@ -11,10 +11,9 @@ void solve()
 {
   int n;
   string s;
-  string ret = "Yes";
+  int flag = 0;
   cin >> n;
-  getline(cin, s);
-  getline(cin, s);
+  cin >> s;
   int r = 0, b = 0;
   for (int i = 0; i < n; i++)
   {
@@ -25,12 +24,18 @@ void solve()
     else
     {
       if (r == 0 || b == 0)
-        ret = "NO";
-      r = 0, b = 0;
+      {
+        flag = 1;
+      }
+      r = 0;
+      b = 0;
     }
   }
-  if (r == 0 || b == 0)
-    ret = "NO";
+  if (flag == 0 && s[n - 1] == 'W')
+  {
+    flag = 0;
+  }
+  string ret = (flag == 0) ? "Yes" : "NO" ;
   cout << ret << endl;
 }
 int main()
