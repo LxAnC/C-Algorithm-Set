@@ -4,12 +4,4 @@
  * @author: LxAnC
  * @date: 2024-04-25 
  */
-#include <bits/stdc++.h>
-
-using namespace std;
-
-int main()
-{
-   
-   return 0;
-}
+//思路就是先找出最大值,然后将改为对应位的数字
