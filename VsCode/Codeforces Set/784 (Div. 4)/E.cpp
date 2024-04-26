@@ -14,7 +14,7 @@ void solve()
   long long ret=0;
   cin >> n;
   vector<string>s(n);
-  for(int i=0;i<n;i++)
+  for(long long i=0;i<n;i++)
   cin>>s[i];
   for(int i=0;i<n;i++)
   {
