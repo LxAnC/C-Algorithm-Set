@@ -6,7 +6,8 @@
  */
 //还是比较简单,因为题目只限定了长度为2
 //可以直接模拟
-//
+//时间复杂度:on
+//ranges可以省略begin,end(),还是比较方便的
 class Solution {
 public:
     bool isSubstringPresent(string s) {
