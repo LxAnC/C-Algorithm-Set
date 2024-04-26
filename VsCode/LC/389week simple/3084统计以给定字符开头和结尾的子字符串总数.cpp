@@ -13,6 +13,7 @@
 //第二种思路也正确,不过很难找规律
 
 //还是灵神牛逼,两行代码解决
+//也就是说看几个c能组成多少个字符串,能跟左边和自己
 class Solution {
 public:
     long long countSubstrings(string s, char c) {
