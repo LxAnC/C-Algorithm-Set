@@ -4,6 +4,12 @@
  * @author: LxAnC
  * @date: 2024-04-26
  */
+/**
+ * Copyright © 2024 LxAnC. All rights reserved.
+ *
+ * @author: LxAnC
+ * @date: 2024-04-26
+ */
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -14,19 +20,20 @@ void solve()
   long long ret=0;
   cin >> n;
   vector<string>s(n);
-  for(long long i=0;i<n;i++)
+  for(int i=0;i<n;i++)
   cin>>s[i];
+  sort(s.begin(),s.end());
   for(int i=0;i<n;i++)
   {
-      for(int j=i+1;j<n;j++)
-      {
-        if(s[i]==s[j])
-        continue;
-        if(s[i][0]-s[j][0]==0)
+     int j=i;
+     cout<<s[j]<<endl;
+     while(j<n&&s[j][0]==s[i][0]&&s[j]!=s[i])
+     {
         ret++;
-        else if(s[i][1]-s[j][1]==0)
-        ret++;
-      }
+        j++;
+     }
+     i=j;
+     
   }
     cout<<ret<<endl;
 }
@@ -40,3 +47,4 @@ int main()
   }
   return 0;
 }
+
