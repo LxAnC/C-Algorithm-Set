@@ -9,10 +9,7 @@
 class Solution {
 public:
     int minOperations(int k) {
-        int ans = INT_MAX;
-        for (int m = 1; m <= k; m++) {
-            ans = min(ans, m - 1 + (k - 1) / m);
-        }
-        return ans;
+        int i=max((int)sqrt(k-1),1);
+        return min(i+(k-1)/(i+1),i+(k-1)/i-1);
     }
 };
