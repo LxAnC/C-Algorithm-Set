@@ -9,8 +9,13 @@
 using namespace std;
 //链接如下
 // https://leetcode.cn/problems/apply-operations-to-make-sum-of-array-greater-than-or-equal-to-k/description/
-int main()
-{
-   
-   return 0;
-}
+class Solution {
+public:
+    int minOperations(int k) {
+        int ans = INT_MAX;
+        for (int m = 1; m <= k; m++) {
+            ans = min(ans, m - 1 + (k - 1) / m);
+        }
+        return ans;
+    }
+};
