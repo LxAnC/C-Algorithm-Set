@@ -21,11 +21,6 @@ public:
         return k * (k + 1) / 2;
     }
 };
-
-作者：灵茶山艾府
-链接：https://leetcode.cn/problems/count-substrings-starting-and-ending-with-given-character/solutions/2692043/jian-ji-xie-fa-pythonjavacgo-by-endlessc-ecl8/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 //第一种超时暴力算法::
 // class Solution {// public://     long long countSubstrings(string s, char c) {//         int ret=0;//         int n=s.length();//         for(int i=0;i<n;i++)
 //         
