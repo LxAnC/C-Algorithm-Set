@@ -9,8 +9,16 @@
 using namespace std;
 
 // 链接如下https://leetcode.cn/contest/weekly-contest-391/
-int main()
-{
-   
-   return 0;
-}
+class Solution {
+public:
+    int sumOfTheDigitsOfHarshadNumber(int b) {
+        int s=0;
+        int x=b;
+        while(x)
+        {
+            s+=x%10;
+            x/=10;
+        }
+        return b%s==0?s:-1;
+    }
+};
