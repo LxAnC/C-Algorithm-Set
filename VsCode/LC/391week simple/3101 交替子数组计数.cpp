@@ -35,3 +35,15 @@ public:
         return ret;
     }
 };
+//这是灵神的简洁做法,参考并学习
+class Solution {
+public:
+    long long countAlternatingSubarrays(vector<int> &nums) {
+        long long ans = 0, cnt = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            i && nums[i] == nums[i - 1] ? cnt = 1 : cnt++;
+            ans += cnt; // 有 cnt 个以 i 为右端点的交替子数组
+        }
+        return ans;
+    }
+};
