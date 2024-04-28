@@ -19,7 +19,7 @@ public:
         while (numBottles != 0) {
             if (numBottles != 0) {
                 ret += numBottles;
-                empt == numBottles;
+                empt += numBottles;
                 numBottles = 0;
             }
             if(numExchange!=0&&empt>=numExchange)
