@@ -14,6 +14,12 @@ int main()
 {
    int n=20;
    int k=2;
-   cout<<n|0;
+   int sum=0;
+   while(n)
+   {
+    sum+=n|0;
+    n>>1;
+   }
+   cout<<sum<<endl;
    return 0;
 }
