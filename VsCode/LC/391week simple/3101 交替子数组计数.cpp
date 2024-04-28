@@ -10,6 +10,7 @@ using namespace std;
 
 //先讲一下思路
 //就是直接模拟首先写出暴力枚举的写法
+//不过最后两个测试过不了
 class Solution {
 public:
     long long countAlternatingSubarrays(vector<int>& nums) {
