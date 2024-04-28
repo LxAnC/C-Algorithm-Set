@@ -9,6 +9,7 @@
 using namespace std;
 
 // 链接如下https://leetcode.cn/contest/weekly-contest-391/
+//时间复杂度为o(logx)
 class Solution {
 public:
     int sumOfTheDigitsOfHarshadNumber(int b) {
