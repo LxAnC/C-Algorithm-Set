@@ -25,7 +25,17 @@ int main()
 
    //包含元素的动态数组
    vector<int>c{1,2,3,4,5};//初始化包含元素的数组
-   for(auto x:c)
-   cout<<x<<endl;
+   // for(auto x:c)
+   // cout<<x<<endl;
+
+   vector<int>o[5];//定义一个二维数组,第一维固定长度为5第二维可变
+
+   vector<vector<int>>nums;//定义一个行和列都可变的数组
+   nums.push_back({1,2,3,4,5});
+   //还可以直接push一个数组
+   //固定长度的初始化二维
+   vector<vector<int>>p(n+1,vector<int>(n+2));//固定格式
+   vector a(n+1,vector(n+1,0));//这是c++17和c++20支持的格式但是不常用
+   
    return 0;
 }
