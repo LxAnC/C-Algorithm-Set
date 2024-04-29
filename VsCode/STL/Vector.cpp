@@ -39,14 +39,17 @@ int main()
 
    // 一些基本的方法函数
    //  这里以a数组为例
-   a.front();//返回第一个数据O ( 1 ) 
-   a.end();//返回数组中的最后一个数据 O ( 1 ) 
-   a.back();//删除最后一个数据O ( 1 ) 
-   a.pop_back();
-   a.push_back(2);
-   a.size();
-   a.clear();
-   a.resize(2,4);//改变数组的大小为2,里面的元素为4
-
+   a.front();                             // 返回第一个数据O ( 1 )
+   a.end();                               // 删除最后一个数据O ( 1 )
+   a.back();                              // 返回数组中的最后一个数据 O ( 1 )
+   a.pop_back();                          // 删除最后一个数据O ( 1 )
+   a.push_back(2);                        // 在尾部加一个数据O ( 1 )
+   a.size();                              // 返回实际数据个数（unsigned类型）O ( 1 )
+   a.clear();                             // 清除元素个数O ( N ) ，N为元素个数
+   a.resize(2, 4);                        // 改变数组的大小为2,里面的元素为4
+   a.insert(a.begin() + 1, 2);            // 在第第二个位置插入2 Order(2)
+   a.erase(a.begin() + 1, a.begin() + 2); // 删除[first,last)的所有元素，O ( N ) O(N)O(N)
+   a.empty();                             // 判断是否为空O(1);
+   sort(a.begin(), a.end());              // 排序函数n*log2n
    return 0;
 }
