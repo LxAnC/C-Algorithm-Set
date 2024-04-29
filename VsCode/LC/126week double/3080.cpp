@@ -57,3 +57,36 @@ int main()
       cout << x << endl;
    return 0;
 }
+class Solution {
+public:
+    vector<long long> unmarkedSumArray(vector<int>& nums, vector<vector<int>>& queries) {
+        long long n=nums.size();
+        long long sum=accumulate(nums.begin(),nums.end(),0);
+        vector<long long>id;
+        vector<long long>ret;
+        for(long long  i=0;i<n;i++)
+        id.push_back(i);
+        long long j=0;
+        stable_sort(id.begin(),id.end(),[nums,id](long long  a,long long b){
+            return nums[id[a]]<nums[id[b]];
+        });
+        for(int i=0;i<queries.size();i++)
+        {
+            long long  index=queries[i][0];
+            long long  k=queries[i][1];
+            sum-=nums[index];
+            nums[index]=0;
+            while(k&&j<n)
+            {
+                if(nums[id[j]])
+                {sum-=nums[id[j]];
+                    nums[id[j]]=0;
+                k--;};j++;
+            }
+           ret.push_back(sum);
+
+
+        }
+        return ret;
+    }
+};
