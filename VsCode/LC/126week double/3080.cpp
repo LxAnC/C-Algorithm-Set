@@ -56,20 +56,16 @@ int main()
    for (auto x : ret)
       cout << x << endl;
    return 0;
-}
-class Solution {
+}class Solution {
 public:
     vector<long long> unmarkedSumArray(vector<int>& nums, vector<vector<int>>& queries) {
         long long n=nums.size();
-        long long sum=accumulate(nums.begin(),nums.end(),0);
-        vector<long long>id;
+        long long sum=accumulate(nums.begin(),nums.end(),0LL);
+        vector<long long>id(n);
         vector<long long>ret;
-        for(long long  i=0;i<n;i++)
-        id.push_back(i);
+        iota(id.begin(),id.end(),0);
         long long j=0;
-        stable_sort(id.begin(),id.end(),[nums,id](long long  a,long long b){
-            return nums[id[a]]<nums[id[b]];
-        });
+        ranges::stable_sort(id, [&](int i, int j) { return nums[i] < nums[j]; });
         for(int i=0;i<queries.size();i++)
         {
             long long  index=queries[i][0];
