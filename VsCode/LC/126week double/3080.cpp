@@ -15,8 +15,10 @@ int main()
 
    int n=nums.size();
    for(int i=0;i<n;i++)
-   ids[i]=i;
-   sort(ids.begin(),ids.end(),cmp);
+   ids.push_back(i);
+   sort(ids.begin(),ids.end(),[nums,ids](int a,int b){
+    return nums[ids[a]]<nums[ids[b]];
+   });
    for(auto x:ids)
    cout<<x<<endl;
    return 0;
