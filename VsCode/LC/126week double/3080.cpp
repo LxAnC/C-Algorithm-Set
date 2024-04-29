@@ -33,8 +33,10 @@ int main()
    for (int i = 0; i < n; i++)
       id.push_back(i);
    int j = 0;
+   
    sort(id.begin(), id.end(), [nums, id](int a, int b)
         { return nums[id[a]] < nums[id[b]]; });
+        sort(nums.begin(),nums.end());
    for (int i = 0; i < queries.size(); i++)
    {
       int index = queries[i][0];
@@ -44,7 +46,6 @@ int main()
       {
          if (nums[j])
          {
-            cout << nums[j] << " " << endl;
             nums[j] = 0;
             k--;
          };
