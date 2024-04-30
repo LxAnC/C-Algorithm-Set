@@ -46,9 +46,11 @@ int main()
    a.push_back(2);                        // 在尾部加一个数据O ( 1 )
    a.size();                              // 返回实际数据个数（unsigned类型）O ( 1 )
    a.clear();                             // 清除元素个数O ( N ) ，N为元素个数
+   a.resize(20);                          // 只重置数组的长度空间,没有改变其值多删少补
    a.resize(2, 4);                        // 改变数组的大小为2,里面的元素为4
    a.insert(a.begin() + 1, 2);            // 在第第二个位置插入2 Order(2)
    a.erase(a.begin() + 1, a.begin() + 2); // 删除[first,last)的所有元素，O ( N ) O(N)O(N)
+   a.erase(a.begin() + 3);                // 删除下标为3的数据
    a.empty();                             // 判断是否为空O(1);
    sort(a.begin(), a.end());              // 排序函数n*log2n
    return 0;
