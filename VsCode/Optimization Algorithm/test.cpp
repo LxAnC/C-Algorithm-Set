@@ -29,11 +29,14 @@ int main()
   // transform(m.begin(),m.end(),back_inserter(output),[&](const int n){
   //   return n*n;
   // });
-  //这样需要一个中间变量,这里直接套入views还有管道运算符
-  auto output=s
-  |views::filter([](const int a){return a%3==0;})
-  |views::transform([](const int a){return a*a;});//完全可以代替前面的代码
-  for (auto x : output)
+  // 这样需要一个中间变量,这里直接套入views还有管道运算符
+  // auto output=s
+  // |views::filter([](const int a){return a%3==0;})
+  // |views::transform([](const int a){return a*a;});//完全可以代替前面的代码
+  // auto x=views::iota(s.begin(),s.end(),0);//不能这么写
+
+  auto x=iota(1,10);//这么写
+  for (auto x : views::iota(1, 10))
     cout << x << " ";
   return 0;
 }
