@@ -52,6 +52,6 @@ int main()
         ret += 60;
     }
   }
-  cout<<ret == 0 ? 1 : ret;
-  return 0;
+  int b=ret==0?1:ret;
+  cout<<b;
 }
