@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
-
+//测试c++版本的指令
 int main() {
     // c++23
-    std::cout << std::byteswap(114514) << '\n';
+    std::cout <<__cplusplus<< '\n';
 
     // c++20
     std::cout << std::midpoint(1, 15) << '\n';
