@@ -10,6 +10,6 @@ using namespace std;
 
 int main()
 {
-   
+   //设置了插件太爽了
    return 0;
 }
