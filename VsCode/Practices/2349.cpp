@@ -33,6 +33,7 @@ public:
         return *it->second.begin();
     }
 };
+//这里是用的惰删除堆
 class NumberContainers {
 public:
         unordered_map<int,int>s;
