@@ -91,5 +91,19 @@
     "typeinfo": "cpp",
     "valarray": "cpp",
     "variant": "cpp"
-  }
+  },
+  "saveEditorLayout.list": [
+    {
+      "name": "group1",
+      "documents": [],
+      "layout": {
+        "orientation": 1,
+        "groups": [
+          {
+            "size": 692
+          }
+        ]
+      }
+    }
+  ]
 }
