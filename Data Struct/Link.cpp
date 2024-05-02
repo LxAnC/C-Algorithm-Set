@@ -4,6 +4,7 @@
  * @author: LxAnC
  * @date: 2024-04-18
  */
+//复习一下链表
 // 手搓一个单链表
 #include <bits/stdc++.h>
 // typedef  i;
