@@ -10,6 +10,9 @@ using namespace std;
 
 int main()
 {
-   
+   int n,q;
+   cin>>n;
+   vector<int>nums;
+   auto x=ranges::view::iota(1,n);
    return 0;
 }
