@@ -30,7 +30,7 @@ long long bfs(int x1, int y1)
        if(mp[sx][sy]!=0)continue;
        if(dist[sx][sy]>0)continue;
        s.push({sx,sy});
-       dist[sx][sy]=dist[x1][y1]+1;
+       dist[sx][sy]=dist[q.first][q.second]+1;
     }
    
   }
