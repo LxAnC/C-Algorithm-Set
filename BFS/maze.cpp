@@ -9,7 +9,7 @@
 using namespace std;
 int mp[10000][10000];   // 代表存的地图
 int dist[10000][10000]; // 代表距离
-queue<queue<int, int>> s;
+queue<pair<int, int>> s;
 int n;
 int dx[] = {1, 0, -1, 0};
 int dy[] = {0, 1, 0, -1}; // 代表的各个方向可以走的
@@ -27,7 +27,7 @@ long long bfs(int x1, int y1)
        int sx=q.first+dx[i];
        int sy=q.second+dy[i];
        if(sx<1||sx>n||sy<1||sy>n)continue;
-       if(mp[sx][xy]!=0)continue;
+       if(mp[sx][sy]!=0)continue;
        if(dist[sx][sy]>0)continue;
        s.push({sx,sy});
        dist[sx][sy]=dist[x1][y1]+1;
@@ -46,5 +46,6 @@ int main()
       cin >> mp[i][j];
     }
   long long ret = bfs(1, 1);
+  cout<<ret;
   return 0;
 }
