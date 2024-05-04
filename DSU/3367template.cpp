@@ -8,6 +8,7 @@
 
 using namespace std;
 // https://www.luogu.com.cn/problem/P3367
+//成功AC,再看看视频稳固一下
 const int Max = 1e4 + 10;
 int prex[Max];
 int n, m;
