@@ -25,10 +25,9 @@ int main()
     if (a[i] != i)
     {
       int m = a[i];
-      swap(a[i], a[b[i]]);p.push({a[i], a[b[i]]});
+      swap(a[i], a[b[i]]);
+      p.push({b[m],b[i]});
       swap(b[i], b[m]);
-
-      
       ret++;
     }
     else{
