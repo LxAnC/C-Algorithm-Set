@@ -25,6 +25,8 @@ int main()
     if (a[i] != i)
     {
       swap(a[i], a[b[i]]);
+      
+      
       p.push({a[i], a[b[i]]});
       ret++;
     }
