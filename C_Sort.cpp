@@ -7,27 +7,37 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-unordered_map<int, int> mp;
-vector<pair<int, int>> p;
+queue<pair<int, int>> p;
 int main()
 {
   int n, ret = 0;
   cin >> n;
-  vector<int> s(n + 1);
+  int a[200005] = {0}, b[200005] = {0};
   for (int i = 1; i <= n; i++)
   {
     int x;
     cin >> x;
-    mp[i] = x;
+    a[i] = x;
+    b[x] = i;
   }
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n;)
   {
-    if (mp[i] != i)
+    if (a[i] != i)
     {
-      auto it = mp.find(mp.begin(), mp.end(), i);
-      swap(mp[i], )
+      swap(a[i], a[b[i]]);
+      p.push({a[i], a[b[i]]});
+      ret++;
+    }
+    else
+    {
+      i++;
     }
   }
-  // cout<<__cplusplus<<endl;
+  cout << ret << endl;
+  while (!p.empty())
+  {
+    cout << p.front().first << " " << p.front().second << endl;
+    p.pop();
+  }
   return 0;
 }
