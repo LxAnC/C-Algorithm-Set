@@ -11,25 +11,32 @@ using namespace std;
 int main()
 {
   int n, q;
-  cin >> n>>q; 
-   int sum=n;
+
+  vector<int> a{1, 2, 3};
+  for (int i : (a | views::reverse))
+  {
+    std::cout << i;
+  }
+  cin >> n >> q;
+  int sum = n;
   vector<int> nums;
   iota(nums.begin(), nums.end(), 1);
-  unordered_map<int,int>bo;
-  for(int i=0;i<q;i++)
+  unordered_map<int, int> bo;
+  for (int i = 0; i < q; i++)
   {
-      int bit;
-      cin>>bit;
-      if(!(bo.count(bit))||bo[bit]==0)
-      {
-          bo[bit]=1;
-          sum--;
-      }
-      else
-     { bo[bit]=0;
-     sum++;
-     }
+    int bit;
+    cin >> bit;
+    if (!(bo.count(bit)) || bo[bit] == 0)
+    {
+      bo[bit] = 1;
+      sum--;
+    }
+    else
+    {
+      bo[bit] = 0;
+      sum++;
+    }
   }
-  cout<<sum<<endl;
+  cout << sum << endl;
   return 0;
 }
