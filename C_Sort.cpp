@@ -20,18 +20,18 @@ int main()
     a[i] = x;
     b[x] = i;
   }
-  for (int i = 1; i <= n;)
+  for (int i = 1; i <= n; )
   {
     if (a[i] != i)
     {
-      swap(a[i], a[b[i]]);
+      int m = a[i];
+      swap(a[i], a[b[i]]);p.push({a[i], a[b[i]]});
+      swap(b[i], b[m]);
+
       
-      
-      p.push({a[i], a[b[i]]});
       ret++;
     }
-    else
-    {
+    else{
       i++;
     }
   }
