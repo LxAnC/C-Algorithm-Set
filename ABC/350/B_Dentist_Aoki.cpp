@@ -13,7 +13,7 @@ int main()
   int n, q;
 
   vector<int> a{1, 2, 3};
-  for (int i : (a | views::reverse))
+  for (int i : (a | views::reverse))//20240504留
   {
     std::cout << i;
   }
