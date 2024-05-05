@@ -9,44 +9,61 @@
 using namespace std;
 const int maxn = 1e5 + 10;
 int prex[maxn];
+int n, m,k; 
+vector<vector<int, int>> Old(maxn);
 void init(int n)
 {
-    for(int i=1;i<=n;i++)
-    {
-      prex[i]=i;
-    }
+  for (int i = 1; i <= n; i++)
+  {
+    prex[i] = i;
+  }
 }
 int root(int x)
 {
-  return prex[x]==x?x:prex[x]=root(x);
+  return prex[x] == x ? x : prex[x] = root(x);
 }
-int merge(int x,int y)
+void merge(int x, int y)
 {
-    prex[root(x)]=root(y);
+  prex[root(x)] = root(y);
+  Old[k-m][x]=y;
 }
-bool iscon(int x,int y)
+bool iscon(int x, int y)
 {
-  return root(x)==root(y)?1:0;
+  return Old[k-m][x]==y;
+}
+void oldchange(int k)
+{
+    for(int i=m;i>k;i--)
+    {
+        for(int  j=1;j<=n;j++)
+        Old[i][j]=j;
+    }
 }
 int main()
 {
-  int n, m;
+
   cin >> n >> m;
+  k=m;
   init(n);
-  while(m--)
+  for(int i=1;i<=m;i++)
   {
-    int z,x,y;
-    cin>>z>>x>>y;
-    if(z==1)
+    int z, x, y;
+    cin >> z;
+    if (z == 1)
     {
-      merge(x,y);
+      cin >> x >> y;
+      merge(x, y);
     }
-    else if(z==3)
+    else if (z == 3)
     {
-      cout<<iscon(x,y)<<endl;;
+      cin >> x >> y;
+      cout << iscon(x, y) << endl;
+      ;
     }
-    else{
-        
+    else
+    {
+      cin >> x;
+      oldchange(x);
     }
   }
   return 0;
