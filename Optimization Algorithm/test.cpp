@@ -34,9 +34,10 @@ int main()
   // |views::filter([](const int a){return a%3==0;})
   // |views::transform([](const int a){return a*a;});//完全可以代替前面的代码
   // auto x=views::iota(s.begin(),s.end(),0);//不能这么写
-
-  auto x=iota(1,10);//这么写
-  for (auto x : views::iota(1, 10))
+  // vector<int>a;
+  // iota()//这么写
+  for (auto x : views::iota(1, 11))
     cout << x << " ";
+  cout << __cplusplus << endl;
   return 0;
 }

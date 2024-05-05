@@ -7,6 +7,7 @@
       "command": "C:/Program Files/mingw64/bin/g++.exe",
       "args": [
         "-fdiagnostics-color=always",
+        "-std=c++23",
         "-g",
         "${file}",
         "-o",
@@ -27,6 +28,7 @@
       "command": "C:/Program Files/mingw64/bin/g++.exe",
       "args": [
         "-fdiagnostics-color=always",
+        "-std=c++23",
         "-g",
         "${file}",
         "-o",
