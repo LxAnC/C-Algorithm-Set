@@ -9,8 +9,8 @@
 using namespace std;
 const int maxn = 1e5 + 10;
 int prex[maxn];
-int n, m,k; 
-vector<vector<int, int>> Old(maxn);
+int n, m, k;
+vector<vector<int>> Old(maxn);
 void init(int n)
 {
   for (int i = 1; i <= n; i++)
@@ -25,27 +25,27 @@ int root(int x)
 void merge(int x, int y)
 {
   prex[root(x)] = root(y);
-  Old[k-m][x]=y;
+  Old[m][x] = y;
 }
 bool iscon(int x, int y)
 {
-  return Old[k-m][x]==y;
+  return Old[k - m][x] == y;
 }
 void oldchange(int k)
 {
-    for(int i=m;i>k;i--)
-    {
-        for(int  j=1;j<=n;j++)
-        Old[i][j]=j;
-    }
+  for (int i = m; i > k; i--)
+  {
+    for (int j = 1; j <= n; j++)
+      Old[i][j] = j;
+  }
 }
 int main()
 {
 
   cin >> n >> m;
-  k=m;
+  k = m;
   init(n);
-  for(int i=1;i<=m;i++)
+  for (int i = 1; i <= m; i++)
   {
     int z, x, y;
     cin >> z;
