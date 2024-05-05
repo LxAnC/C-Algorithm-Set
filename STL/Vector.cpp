@@ -53,5 +53,6 @@ int main()
    a.erase(a.begin() + 3);                // 删除下标为3的数据
    a.empty();                             // 判断是否为空O(1);
    sort(a.begin(), a.end());              // 排序函数n*log2n
+   ranges::sort(a);
    return 0;
 }
