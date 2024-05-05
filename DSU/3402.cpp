@@ -46,7 +46,7 @@ int main()
       cout<<iscon(x,y)<<endl;;
     }
     else{
-
+        
     }
   }
   return 0;
