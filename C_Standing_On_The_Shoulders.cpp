@@ -10,7 +10,7 @@ using namespace std;
 const long long maxn=2e5+10;
 long long a[maxn],b[maxn];
 long long c[maxn];
-priority_queue<pair<int,int>>q;
+priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>q;
 int main()
 {
    
@@ -23,7 +23,7 @@ int main()
    }
    while(!q.empty())
    {
-    
+      
    }
 
    return 0;
