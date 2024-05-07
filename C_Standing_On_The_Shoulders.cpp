@@ -19,7 +19,12 @@ int main()
    for(long long i=0;i<n;i++)
    {
       cin>>a[i+1]>>b[i+1];
-      c[i+1]=abs(a[i+1]-b[i+1]);
+      q.push({i+1,abs(a[i+1]-b[i+1])});
    }
+   while(!q.empty())
+   {
+    
+   }
+
    return 0;
 }
