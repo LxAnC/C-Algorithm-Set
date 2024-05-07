@@ -1,48 +1,68 @@
-/**
- * Copyright © 2024 LxAnC. All rights reserved.
- *
- * @author: LxAnC
- * @date: 2024-05-07
- */
-#include <bits/stdc++.h>
+// LUOGU_RID: 156571137
+// Problem: D - New Friends
+// LuoguUID: 514700 
+// LuoguUserName: MicroSun
+// 
+// Powered by CP Editor (https://cpeditor.org)
 
+#include<bits/stdc++.h>
 using namespace std;
-const long long maxn = 2e5 + 10;
-long long n, m, mp[1000][1000],ret;
-void init(int x, int y) // 初始化关系表
-{
-   mp[x][y] = 1;
-   mp[y][x] = 1;
-   return;
+#define endl '\n'
+#define pb push_back
+#define fst first
+#define scd second
+#define rep(i,s,e) for(int i=s;i<=e;i++)
+#define dep(i,s,e) for(int i=s;i>=e;i--)
+
+using ll=long long;
+using pii=pair<int,int>;
+using pll=pair<ll,ll>;
+
+const int maxn=2e5+10;
+
+struct edge{
+	int to,nxt;
+}a[maxn<<1];
+int head[maxn],cnt;
+void add(int u,int v){
+	a[++cnt]={v,head[u]};
+	head[u]=cnt;
 }
-int solve()
-{
-   for(int i=1;i<=n;i++)
-   {
-      for(int j=1;j<=n;j++)
-      {
-         if(mp[i][j]==0)
-         {
-            ret++;
-            mp[i][j]=1;
-            mp[j][i]=1;
-         }
-      }
-   }
-   return ret;
+ll cnt1;
+bool vis[maxn];
+void dfs(int u,int f){
+	if(vis[u]) return;
+	vis[u]=1;
+	++cnt1;
+	for(int i=head[u];i;i=a[i].nxt){
+		int t=a[i].to;
+		if(t!=f) dfs(t,u);
+	}
 }
-signed main()
-{
-   ios::sync_with_stdio(0);
-   cin >> n >> m;
-   while (m--) 
-   {
-      int x, y;
-      cin >> x >> y;
-      init(x, y);
-      mp[x][x]=1;
-      mp[y][y]=1;
-   }
-   cout << solve() << endl;
-   return 0;
+void solve(){
+	int n,m;
+	cin>>n>>m;
+	rep(i,1,m){
+		int a,b;
+		cin>>a>>b;
+		add(a,b);add(b,a);
+	}
+	ll ans=0;
+	rep(i,1,n){
+		if(!vis[i]){
+			dfs(i,i);
+			ans+=cnt1/2.0*(cnt1-1);
+			cnt1=0;
+		}
+	}
+	cout<<ans-m;
+}
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+	int t=1;
+	//cin>>t;
+	while(t--) solve();
+    return 0;
 }
