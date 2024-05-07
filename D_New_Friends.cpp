@@ -8,8 +8,8 @@
 
 using namespace std;
 const long long maxn = 2e5 + 10;
-long long n, m, mp[maxn][maxn],ret;
-void init(int x, int y) // 初始化地图
+long long n, m, mp[1000][1000],ret;
+void init(int x, int y) // 初始化关系表
 {
    mp[x][y] = 1;
    mp[y][x] = 1;
@@ -25,6 +25,7 @@ int solve()
          {
             ret++;
             mp[i][j]=1;
+            mp[j][i]=1;
          }
       }
    }
@@ -32,8 +33,9 @@ int solve()
 }
 signed main()
 {
+   ios::sync_with_stdio(0);
    cin >> n >> m;
-   while (m--)
+   while (m--) 
    {
       int x, y;
       cin >> x >> y;
