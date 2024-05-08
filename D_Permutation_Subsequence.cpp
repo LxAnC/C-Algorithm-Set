@@ -9,8 +9,7 @@ int main()
   cin.tie(0);
   cout.tie(0);
   int n, k;
-  cin >> n >> k;
-
+  cin >> n >> k;//先输入最先的数字,k为序列个数
   vector<int> P(n);
   int p;
   for (int i = 0; i < n; i++)
@@ -23,10 +22,10 @@ int main()
   set<int> S;
   for (int i = 0; i < k; i++)
   {
-    S.insert(P[i]);
+    S.insert(P[i]);//插入他们的位置
   }
 
-  int ans = *S.rbegin() - *S.begin();
+  int ans = *S.rbegin() - *S.begin();//算出最开始的值
 
   for (int i = k; i < n; i++)
   {
