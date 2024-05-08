@@ -7,7 +7,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+//博弈论 八仕博弈
 int main()
 {
    
