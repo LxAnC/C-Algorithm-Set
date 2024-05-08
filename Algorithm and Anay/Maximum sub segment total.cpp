@@ -8,7 +8,7 @@
 //最大公共子区间的长度
 using namespace std;  
 int n;
-const int maxn = 1e5 + 2;
+const int maxn = 1000;
 vector<vector<int>> dp(maxn + 1,vector<int>(maxn+1));
 int a[maxn],ret=INT_MIN;
 int solve()
@@ -20,7 +20,7 @@ int solve()
   for(int i=0;i<=n;i++)
   {
       dp[i][i]=a[i];
-      for(int j=i+1;j<n;j++)
+      for(int j=i+1;j<=n;j++)
       {
         dp[i][j]=dp[i][j-1]+a[j];
         ret=max(dp[i][j],ret);
