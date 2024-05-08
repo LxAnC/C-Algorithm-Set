@@ -5,20 +5,37 @@
  * @date: 2024-05-08
  */
 #include <bits/stdc++.h>
-//最大公共子区间的长度
-using namespace std;  
+// 最大公共子区间的长度
+using namespace std;
 int n;
-const int maxn = 1000;
-vector<vector<int>> dp(maxn + 1,vector<int>(maxn+1));
-int a[maxn],ret=INT_MIN;
+const int maxn = 1e5 + 10;
+// vector<vector<int>> dp(maxn + 1,vector<int>(maxn+1));
+vector<int> dp(maxn);
+int a[maxn], ret = INT_MIN;
+signed main()
+{
+  ios::sync_with_stdio(0);
+  cin >> n;
+  for (int i = 1; i <= n; i++)
+  {
+    cin >> a[i];
+  }
+  for (int i = 1; i <= n; i++)
+  {
+    dp[i] =max(a[i],dp[i-1]+a[i]);
+    ret=max(dp[i],ret);
+  }
+  cout<<ret<<endl;
+  return 0;
 
+}
 
 // int solve()
 // {
 //   int sum=0;
 //   //状态转移方程
 //   //最终输出dp[n][n];
-// //ret记录当前最大的子区间和 
+// //ret记录当前最大的子区间和
 //   for(int i=0;i<=n;i++)
 //   {
 //       dp[i][i]=a[i];
