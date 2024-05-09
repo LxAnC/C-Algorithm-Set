@@ -22,13 +22,13 @@ int len = n.size();
 int sum = 0;
 // 0-1背包问题(动态规划)
 
-int dfs(int s, int sum)
+int dfs(int i, int c)
 {
-  if (s < 0)
+  if (i < 0)
     return 0;
   if (w[i] > c)
     return (i - 1, c);
-  return max(dfs(i - 1, c + w[i]), dfs(i - 1, c));
+  return max(dfs(i - 1, c - w[i]) + v[i], dfs(i - 1, c));
 }
 int main()
 {
