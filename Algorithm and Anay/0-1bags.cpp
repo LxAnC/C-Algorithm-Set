@@ -11,14 +11,13 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int n;
+int n=3;
 const int maxn = 1e5 + 10;
 #define ll long long;
 int c;
-vector<int> n{1, 3, -2, 4, -3, 5, 2};
-vector<int> w{1, 3, -2, 4, -3, 5, 2};
-vector<int> v{1, 3, -2, 4, -3, 5, 2};
-int len = n.size();
+vector<int> w{4, 2, 3};
+vector<int> v{4, 2, 3};
+int len = w.size();
 int sum = 0;
 // 0-1背包问题(动态规划)
 
@@ -32,6 +31,8 @@ int dfs(int i, int c)
 }
 int main()
 {
-  dfs(len, c);
+  cin >> c;
+
+  cout << dfs(len - 1, c);
   return 0;
 }

@@ -17,7 +17,7 @@ public:
         int n = nums.size();
         target = target1;
         int dfs=[&](int i, int c) {
-            if (i < 0)
+            if (i < 0)  
                 return 1;
             if (c > target)
                 return 0;
