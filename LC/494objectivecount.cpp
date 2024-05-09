@@ -27,15 +27,16 @@
 //         return dfs(n - 1, target1);
 //     }
 // };
+//表示的是连续的子序列的和的板子
 #include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    vector<int> nums;
-     vector<int> dp;
+    
+     
     int target;
     int n;
-    cin>>n>>target;
+    cin>>n>>target;vector<int> nums(n+1);vector<int> dp(n+1);
     for(int i=0;i<n;i++)
     {
         cin>>nums[i];
