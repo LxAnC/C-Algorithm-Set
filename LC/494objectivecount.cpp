@@ -28,22 +28,25 @@
 //     }
 // };
 //表示的是连续的子序列的和的板子
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
-    
-     
-    int target;
-    int n;
-    cin>>n>>target;vector<int> nums(n+1);vector<int> dp(n+1);
-    for(int i=0;i<n;i++)
-    {
-        cin>>nums[i];
+// 
+class Solution {
+public:
+    int findTargetSumWays(vector<int> &nums, int target) {
+        target += accumulate(nums.begin(), nums.end(), 0);
+        if (target < 0 || target % 2) return 0;
+        target /= 2;
+
+        int f[target + 1];
+        memset(f, 0, sizeof(f));
+        f[0] = 1;
+        for (int x : nums)
+            for (int c = target; c >= x; --c)
+                f[c] += f[c - x];
+        return f[target];
     }
-    for (int i = 1; i <=n; i++)
-    {   
-        dp[i]=max(dp[i-1]+nums[i-1],dp[i-1]);
-    }
-    cout<<dp[n];
-}
+};
+
+作者：灵茶山艾府
+链接：https://leetcode.cn/problems/target-sum/solutions/2119041/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-s1cx/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
