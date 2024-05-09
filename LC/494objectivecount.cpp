@@ -32,15 +32,17 @@ using namespace std;
 int main()
 {
     vector<int> nums;
+     vector<int> dp;
     int target;
     int n;
     cin>>n>>target;
-    for(int i=1;i<=n;i++)
+    for(int i=0;i<n;i++)
     {
         cin>>nums[i];
     }
-    for (int i = n; i >0; i++)
-    {
-        
+    for (int i = 1; i <=n; i++)
+    {   
+        dp[i]=max(dp[i-1]+nums[i-1],dp[i-1]);
     }
+    cout<<dp[n];
 }
