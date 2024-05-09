@@ -34,10 +34,11 @@ public:
     int findTargetSumWays(vector<int> &nums, int target) {
         target += accumulate(nums.begin(), nums.end(), 0);
         if (target < 0 || target % 2) return 0;
-        target /= 2;
+        target /= 2;//这里没搞懂
 
         int f[target + 1];
-        memset(f, 0, sizeof(f));
+        memset(f, 0, sizeof(f));//初始化为0,说明用没用到
+        +
         f[0] = 1;
         for (int x : nums)
             for (int c = target; c >= x; --c)
