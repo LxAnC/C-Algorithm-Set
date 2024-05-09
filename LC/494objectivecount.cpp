@@ -5,6 +5,10 @@
  * @date: 2024-05-09 
  */
 //目标和的对应代码,未改
+//首先正数找到加到p
+//那么负数就等于s-p
+//p-(s-p)=t;
+//p=(s+t)/2
 class Solution {
 public:
     int target;
