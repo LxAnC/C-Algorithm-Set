@@ -17,22 +17,28 @@ const int maxn = 1e5 + 10;
 int c;
 vector<int> w{4, 2, 3};
 vector<int> v{4, 2, 3};
-int len = w.size();
+
+int len = w.size();vector<int>dp(len+1);
 int sum = 0;
 // 0-1背包问题(动态规划)
-
-int dfs(int i, int c)
-{
-  if (i < 0)
-    return 0;
-  if (w[i] > c)
-    return (i - 1, c);
-  return max(dfs(i - 1, c - w[i]) + v[i], dfs(i - 1, c));
-}
+//这只是递归
+// int dfs(int i, int c)
+// {
+//   if (i < 0)
+//     return 0;
+//   if (w[i] > c)
+//     return (i - 1, c);
+//   return max(dfs(i - 1, c - w[i]) + v[i], dfs(i - 1, c));
+// }
 int main()
 {
   cin >> c;
-
-  cout << dfs(len - 1, c);
+  dp[0]=0;
+  // cout << dfs(len - 1, c);
+  for(int i=1;i<=n;i++)
+  {
+    for(int j=c;j>=0;j--)
+    dp[j]=max(dp[j],dp[j-w[i-1]]+v[i-1]);
+  }
   return 0;
 }
