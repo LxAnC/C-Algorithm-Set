@@ -28,13 +28,13 @@
 //     }
 // };
 //表示的是连续的子序列的和的板子
-// 240509留目标和
+// 240509留目标和(结)
 class Solution {
 public:
     int findTargetSumWays(vector<int> &nums, int target) {
         target += accumulate(nums.begin(), nums.end(), 0);
         if (target < 0 || target % 2) return 0;
-        target /= 2;//这里没搞懂
+        target /= 2;
 
         int f[target + 1];
         memset(f, 0, sizeof(f));//初始化为0,说明用没用到
@@ -42,7 +42,7 @@ public:
         f[0] = 1;
         for (int x : nums)
             for (int c = target; c >= x; --c)
-                f[c] += f[c - x];
+                f[c] += f[c - x];//一维数组优化
         return f[target];
     }
 };
