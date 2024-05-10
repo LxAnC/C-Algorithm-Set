@@ -23,13 +23,17 @@ using namespace std;
 //     bool isValid(string word) {
 //         bool ret=false;
 //         int f1=0,f2=0;
-//         return ret;for(int i=0;i<word.size();i++)
+//         if(word.size()<3)
+//         return ret;
+//         for(int i=0;i<word.size();i++)
 //         word[i]=tolower(word[i]);
 //         for(auto x:word){
 //             if(x=='a'||x=='e'||x=='i'||x=='o'||x=='u')
 //             f1=1;
-//             if(!(x=='a'||x=='e'||x=='i'||x=='o'||x=='u')&&x>='a'&&x<='z')
+//             else if(x>='a'&&x<='z')
 //             f2=1;
+//             else if(x>='0'&&x<='9');
+//             else return false;
 //         }
 //         return f1==1&&f2==1?true:false;
 //     }
