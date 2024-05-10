@@ -28,7 +28,7 @@
 //     }
 // };
 //表示的是连续的子序列的和的板子
-// 240509留
+// 240509留目标和
 class Solution {
 public:
     int findTargetSumWays(vector<int> &nums, int target) {
