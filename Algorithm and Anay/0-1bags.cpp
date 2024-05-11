@@ -35,9 +35,9 @@ int main()
   cin >> c;
   dp[0]=0;
   // cout << dfs(len - 1, c);
-  for(int i=1;i<=n;i++)
+  for(int i=1;i<=n;i++)//一个一个的推答案
   {
-    for(int j=c;j>=0;j--)
+    for(int j=c;j>=0;j--)//从大到小进行优化
     dp[j]=max(dp[j],dp[j-w[i-1]]+v[i-1]);
   }
   return 0;
