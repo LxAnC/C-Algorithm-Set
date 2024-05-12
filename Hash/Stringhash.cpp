@@ -5,7 +5,7 @@
  * @date: 2024-05-03
  */
 #include <bits/stdc++.h>
-
+//字符串哈希
 using namespace std;
 unordered_map<string, int> hash1;
 int main()
