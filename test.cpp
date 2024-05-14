@@ -1,9 +1,9 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 signed main()
 {
     int s;
     s=5;
-    cout<<c_pl;
+    cout<<__cplusplus;
     return 0;
 }
