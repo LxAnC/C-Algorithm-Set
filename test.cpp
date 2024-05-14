@@ -3,7 +3,7 @@ using namespace std;
 signed main()
 {
     int s;
-    cin>>s;
-    cout<<s;
+    s=5;
+    cout<<c_pl;
     return 0;
 }
