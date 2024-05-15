@@ -50,7 +50,7 @@ void printOptimalBST(vector<vector<int>> &root, int i, int j, int parent, bool i
     }
     else if (isLeft)
     {
-        cout << "k" << r << "k的左孩子" << parent << endl;
+        cout << "k" << r << "是k的左孩子" << parent << endl;
     }
     else
     {
