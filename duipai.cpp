@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 int main(){
-    srand(time(0));
+    struct _timeb T;
+    
     cout<<rand()<<endl;
 }
