@@ -1,7 +1,9 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+int main()
+{
     struct _timeb T;
-    
-    cout<<rand()<<endl;
+    -ftime(&T);
+    srand(T.millitm);
+    cout << rand() << endl;
 }
