@@ -6,7 +6,10 @@ int main()
     cin.tie(0);
     cout.tie(0);
     //|view::aoti(1,10);
-    vector<int>s;
+    vector<int>s{1,2,3,4,5,8,7,6,4,2};
+
     ranges::sort(s);
+    for(auto x:s)
+    cout<<x<<endl;
     cout<<__cplusplus<<endl;
 }
