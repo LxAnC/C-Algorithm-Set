@@ -10,6 +10,6 @@ int main()
 
     ranges::sort(s);
     for(auto x:s)
-    cout<<x<<endl;
+    cout<<x<<endl;//输出结果正确
     cout<<__cplusplus<<endl;
 }
