@@ -6,5 +6,7 @@ int main()
     cin.tie(0);
     cout.tie(0);
     int s=
-    |view::aoti(1,10);
+    //|view::aoti(1,10);
+    vector<int>s;
+    ranges::sort(s);
 }
