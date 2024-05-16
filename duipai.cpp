@@ -7,3 +7,4 @@ int main()
     int a = rand();
     printf("%d\n", a);
 }
+//查找一下为什么不行
