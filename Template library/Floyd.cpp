@@ -1,11 +1,11 @@
 #include<iostream>
+#include<climits>
 using namespace std;
 int ret=0;
 int n,m;
 const int maxn=1e5+10;
 int graph[maxn][maxn];//图论的数组
 //第一，创建一个距离数组
-int dis[maxn][maxn];//当前点到其他点的最短路径
 void floyd()
 {
     for(int j=1;j<=n;j++)
