@@ -163,7 +163,7 @@ void menu()
     case 9:
         print();
         break;
-    dafult:
+    default:
         cout << "操作失败!" << endl;
         break;
     }
