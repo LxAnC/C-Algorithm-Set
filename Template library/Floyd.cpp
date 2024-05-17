@@ -14,9 +14,11 @@ void floyd()
         {
             if(graph[i][j]!=INT_MAX)
             for(int k=1;k<=n;k++)
-              if()
+              if(graph[i][j]+graph[j][k]<graph[i][k])
+              dis[i][k]=min(graph[i][j]+graph[j][k],dis[i][k]);
         }
     }
+    return;
 }
 int main()
 {
