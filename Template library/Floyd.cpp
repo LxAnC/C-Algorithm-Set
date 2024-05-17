@@ -13,9 +13,9 @@ void floyd()
         for(int i=1;i<=n;i++)
         {
             if(graph[i][j]!=INT_MAX)
-            for(int k=1;k<=n;k++)
-              if(graph[i][j]+graph[j][k]<graph[i][k])
-              graph[i][k]=graph[i][j]+graph[j][k];
+              for(int k=1;k<=n;k++)
+                if(graph[i][j]+graph[j][k]<graph[i][k])
+                   graph[i][k]=graph[i][j]+graph[j][k];
         }
     }
     return;
@@ -37,8 +37,8 @@ int main()
     floyd();
     for(int i=1;i<=n;i++)
      { for(int j=1;j<=n;j++)
-        cout<<graph[i][j];
+        cout<<graph[i][j]<<" ";
         cout<<endl;
      }
-    cout<<ret<<endl;
+     return 0;
 }
