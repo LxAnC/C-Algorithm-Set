@@ -5,7 +5,7 @@
  * @date: 2024-05-08
  */
 #include <bits/stdc++.h>
-
+//dijkstra代码模版
 using namespace std;
 vector<int> dis(n + 1, 1E18);
 auto djikstra = [&](int s = 1) -> void
