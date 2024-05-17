@@ -36,17 +36,71 @@ void QuickSort(int low, int high) {
     QuickSort(low, i - 1);
     QuickSort(i + 1, high);
 }
-void ShellSort()
-{
-
+void ShellSort(int len) {
+    int gap, i, j;
+    int temp;
+    for (gap = len >> 1; gap > 0; gap >>= 1)
+        for (i = gap; i < len; i++) {
+            temp = nums[i];
+            for (j = i - gap; j >= 0 && nums[j] > temp; j -= gap)
+                nums[j + gap] = nums[j];
+            nums[j + gap] = temp;
+        }
 }
-void MergeSort()
-{
+void MergeSort(int len) {
+    int * a=nums;
+    int * b=new int[len];
+    for (int seg = 1; seg < len; seg += seg) {
+        for (int start = 0; start < len; start += seg + seg) {
+            int low = start, mid = min(start + seg, len), high = min(start + seg + seg, len);
+            int k = low;
+            int start1 = low, end1 = mid;
+            int start2 = mid, end2 = high;
+            while (start1 < end1 && start2 < end2)
+                b[k++] = a[start1] < a[start2] ? a[start1++] : a[start2++];
+            while (start1 < end1)
+                b[k++] = a[start1++];
+            while (start2 < end2)
+                b[k++] = a[start2++];
+        }
+        int *temp = a;
+        a = b;
+        b = temp;
+    }
 
+    if (a != nums) {
+        for (int i = 0; i < len; i++)
+            b[i] = a[i];
+        b = a;
+    }
+
+    delete[] b;
 }
-void StackSort()
-{
-
+void max_heapify(int start, int end) {
+    //建立父节点指标和子节点指标
+    int dad = start;
+    int son = dad * 2 + 1;
+    while (son <= end) { //若子节点指标在范围内才做比较
+        if (son + 1 <= end && nums[son] < nums[son + 1]) //先比较两个子节点大小，选择最大的
+            son++;
+        if (nums[dad] > nums[son]) //如果父节点大于子节点代表调整完毕，直接跳出函数
+            return;
+        else { //否则交换父子内容再继续子节点和孙节点比较
+            swap(nums[dad], nums[son]);
+            dad = son;
+            son = dad * 2 + 1;
+        }
+    }
+}
+void HeapSort(int len) {
+    //初始化，i从最后一个父节点开始调整
+    for (int i = len / 2 - 1; i >= 0; i--)
+        max_heapify(i, len - 1);
+    //先将第一个元素和已经排好的元素前一位做交换，再从新调整(刚调整的元素之前的元素)，直到排序完毕
+    for (int i = len - 1; i > 0; i--) {
+        swap(nums[0], nums[i]);
+        max_heapify( 0, i - 1);
+    }
 }
 void menu()
 {
@@ -59,11 +113,11 @@ void menu()
     {
         case 1:QuickSort(0,len-1);print();
             break;
-        case 2:ShellSort();
+        case 2:ShellSort(len);print();
             break;
-        case 3:MergeSort();
+        case 3:MergeSort(len);print();
             break;
-        case 4:StackSort();
+        case 4:HeapSort(len);print();
             break;
         case 5:return ;
         dafult:cout<<"操作失败!"<<endl;break;
