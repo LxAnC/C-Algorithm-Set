@@ -8,7 +8,7 @@ long long int llg[maxn + 1];
 int st(int l, int r)
 {
     int k = llg[r - l + 1];
-    return max(f[l][k], f[r- (1 >> k)][k]);
+    return max(f[l][k], f[r- (1 << k)+1][k]);
 }
 signed main()
 {
@@ -19,7 +19,7 @@ signed main()
         f[i][0] = x;
     }
     llg[0] = -1;
-    for (int i = 1; i <= maxn; i++)
+    for (int i = 1; i <= n; i++)
         llg[i] = llg[i >> 1] + 1;
 
     for (int i = 1; i <= llg[n]; i++)
