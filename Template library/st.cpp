@@ -5,19 +5,18 @@ using namespace std;
 // st
 int n, m;
 int x, y;
-const int maxn = 1005;
-int f[maxn][maxn];
-long long int llg[maxn];
+const int maxn = 1e6 + 5;
+int f[maxn][20];
+long long int llg[maxn + 1];
 void init()
 {
     for (int i = 1; i <= n; i++)
     {
-        cin >> x;
-        f[i][0] = x;
+        cin >> f[i][0];
     }
 
     llg[0] = -1;
-    for (int i = 1; i <= maxn; i++)
+    for (int i = 1; i <= n; i++)
     {
         llg[i] = llg[i >> 1] + 1;
     }
@@ -29,17 +28,17 @@ void init()
 
 int st(int l, int r)
 {
-    int k=llg[r-l+1];
-    return max(f[l][k],f[l+(1>>k)][k]);
+    int k = llg[r - l + 1];
+    return max(f[l][k], f[r - (1 >> k)][k]);
 }
 // 定义一个函数用于返回查询的值
 int main()
 {
     cin >> n >> m;
     init();
-    for (int i = 1; 1 << i <= n; i++)
+    for (int i = 1; i <= llg[n]; i++)
     {
-        for (int j = 1; j + (1 << (i - 1)) <= n; j++)
+        for (int j = 1; j <= n-(1 << i) +1; j++)
             f[j][i] = max(f[j][i - 1], f[j + (1 << (i - 1))][i - 1]);
     }
     for (int i = 1; i <= m; i++)
@@ -47,7 +46,6 @@ int main()
 
         cin >> x >> y;
         cout << st(x, y) << endl;
-        ;
     }
     return 0;
 }
