@@ -13,6 +13,10 @@ void print()
     cout << endl;
     return;
 }
+void soti()
+{
+    
+}
 void QuickSort(int low, int high)
 {
     int i = low;
