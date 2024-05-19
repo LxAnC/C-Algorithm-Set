@@ -1,17 +1,16 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int ret=0;
-    string x;
-    cin>>x;
-    int n=x.length();
-    for(int i=0;i<n;i++)
+    string s;
+    cin >> s;
+    int c = 0, d = 0, res = 1e9;
+    for (int i = 0; i < s.size(); i++)
+        c += s[i] <= 'Z';
+    for (int i = 0; i < s.size() - 1; i++)
     {
-        if(x[i]>='a'&&x[i]<='z')
-        ret++;
+        d += s[i] >= 'a'; // cout<<i-d+1<<endl;
+        res = min(res, d + c - (i - d + 1));
     }
-    
-    cout<<ret;
-    return 0;
+    cout << res << endl;
 }
