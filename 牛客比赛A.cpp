@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+//https://ac.nowcoder.com/acm/contest/82394#question
 int main()
 {
     int n;
