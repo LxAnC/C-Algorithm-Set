@@ -6,5 +6,8 @@ int main()
     string x;
     cin>>x;
     int n=x.length();
-    for()
+    for(int i=0;i<n;i++)
+    {
+        
+    }
 }
