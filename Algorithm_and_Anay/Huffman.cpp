@@ -14,9 +14,9 @@ void createhuffmanTree(huffmanTree &ht, int n);
 void createhuffmanCode(huffmanTree &ht, huffmanCode &hc, int n);
 int main()
 {
-    huffmanTree ht=new hNode[2 * N];
+    huffmanTree ht;
     inithuffmanTree(ht);
-    huffmanCode hc = new char *[N + 1];;
+    huffmanCode hc;
     createhuffmanTree(ht, N);
     createhuffmanCode(ht, hc, N);
     for (int i = 1; i <= N; i++)
@@ -33,6 +33,7 @@ int main()
 }
 int inithuffmanTree(huffmanTree &ht)
 {
+    ht=new hNode[N*2+1];
     for (int i = 1; i <= 2 * N - 1; i++)
     {
         ht[i].parent = ht[i].lch = ht[i].rch = -1; // 设为-1
@@ -66,7 +67,7 @@ void createhuffmanTree(huffmanTree &ht, int n)
                 min1 = ht[j].weight;
                 lpos = j;
             }
-            else if (ht[j].weight < min2 && ht[i].parent == -1)
+            else if (ht[j].weight < min2 && ht[j].parent == -1)
             {
                 min2 = ht[j].weight;
                 rpos = j;
@@ -80,6 +81,7 @@ void createhuffmanTree(huffmanTree &ht, int n)
 }
 void createhuffmanCode(huffmanTree &ht, huffmanCode &hc, int n)
 {
+    hc=new huffmanCode[N*2+1];
     int start = 0, c = 0, f = 0;
     char *code = new char[n+1];
     for (int i = 1; i <= n; i++)
