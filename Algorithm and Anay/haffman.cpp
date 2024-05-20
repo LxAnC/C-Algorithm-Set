@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
-#include <malloc.h>
+// #include <malloc.h>
 #include <string.h>
 #define MAXVALUE 32767		//极大值相当于无穷大
 #define NODENUM 10			//叶子结点数
