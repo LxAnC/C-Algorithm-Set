@@ -14,7 +14,7 @@ void createhuffmanTree(huffmanTree &ht, int n);
 void createhuffmanCode(huffmanTree &ht, huffmanCode &hc, int n);
 int main()
 {
-    huffmanTree ht;
+    huffmanTree ht=new hNode[2 * N];
     inithuffmanTree(ht);
     huffmanCode hc = new char *[N + 1];;
     createhuffmanTree(ht, N);
