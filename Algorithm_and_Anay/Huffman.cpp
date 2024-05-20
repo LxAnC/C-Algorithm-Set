@@ -11,7 +11,7 @@ typedef struct
 typedef char** huffmanCode;
 int inithuffmanTree(huffmanTree &ht); // h
 void createhuffmanTree(huffmanTree &ht, int n);
-void createhuffmanCode(huffmanTree &ht, huffmanCode &hc, int n);
+void createhuffmanCode(huffmanTree ht, huffmanCode &hc, int n);
 int main()
 {
     huffmanTree ht;
@@ -24,11 +24,7 @@ int main()
         cout << ht[i].data << '\t';
         cout << hc[i];
     }
-    for (int i = 1; i <= N; i++)								//遍历输出编码
-	{
-		printf("%c:\t",ht[i].data);
-		printf("%s\n", hc[i]);
-	}
+    
     return 0;
 }
 int inithuffmanTree(huffmanTree &ht)
@@ -79,11 +75,11 @@ void createhuffmanTree(huffmanTree &ht, int n)
         ht[rpos].parent = ht[lpos].parent = i;
     }
 }
-void createhuffmanCode(huffmanTree &ht, huffmanCode &hc, int n)
+void createhuffmanCode(huffmanTree ht, huffmanCode &hc, int n)
 {
-    hc=new huffmanCode[N*2+1];
+    hc=new char *[N*2+1];
     int start = 0, c = 0, f = 0;
-    char *code = new char[n+1];
+    char *code = new char[N+1];
     for (int i = 1; i <= n; i++)
     {
         start = n - 1;
