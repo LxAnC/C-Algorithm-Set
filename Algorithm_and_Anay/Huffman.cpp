@@ -16,7 +16,7 @@ int main()
 {
     huffmanTree ht;
     inithuffmanTree(ht);
-    huffmanCode hc;
+    huffmanCode hc = new char *[N + 1];;
     createhuffmanTree(ht, N);
     createhuffmanCode(ht, hc, N);
     for (int i = 1; i <= N; i++)
@@ -78,10 +78,10 @@ void createhuffmanTree(huffmanTree &ht, int n)
         ht[rpos].parent = ht[lpos].parent = i;
     }
 }
-void createhuffmanCode(huffmanTree ht, huffmanCode &hc, int n)
+void createhuffmanCode(huffmanTree &ht, huffmanCode &hc, int n)
 {
     int start = 0, c = 0, f = 0;
-    char *code = new char[n];
+    char *code = new char[n+1];
     for (int i = 1; i <= n; i++)
     {
         start = n - 1;
