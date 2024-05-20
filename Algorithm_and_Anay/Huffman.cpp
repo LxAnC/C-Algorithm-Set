@@ -22,7 +22,7 @@ int main()
     for (int i = 1; i <= N; i++)
     {
         cout << ht[i].data << '\t';
-        cout << hc[i];
+        cout << hc[i]<<endl;;
     }
     
     return 0;
