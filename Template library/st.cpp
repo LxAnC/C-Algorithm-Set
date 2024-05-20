@@ -7,7 +7,7 @@ int n, m;
 int x, y;
 const int maxn = 1e6 + 5;
 int f[maxn][20];
-long long int llg[maxn + 1];
+int llg[maxn + 1];
 void init()
 {
     for (int i = 1; i <= n; i++)
