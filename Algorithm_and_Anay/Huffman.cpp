@@ -80,6 +80,7 @@ void createhuffmanCode(huffmanTree ht, huffmanCode &hc, int n)
     hc=new char *[N*2+1];
     int start = 0, c = 0, f = 0;
     char *code = new char[N+1];
+    code[n-1]='\0';
     for (int i = 1; i <= n; i++)
     {
         start = n - 1;
@@ -97,6 +98,7 @@ void createhuffmanCode(huffmanTree ht, huffmanCode &hc, int n)
             f = ht[c].parent;
         }
         // 更新
+        hc[i]=new char[n-start];
         strcpy(hc[i], &code[start]);
     }
     delete[] code;
