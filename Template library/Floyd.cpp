@@ -15,12 +15,12 @@ int graph[maxn][maxn] = {
 ; // 图论的数组
 void floyd()
 {
-    for (int j = 1; j <= n; j++)
+    for (int j = 1; j <= n; j++)// 中间节点
     {
         for (int i = 1; i <= n; i++)
         {
-            if (graph[i-1][j-1] != INT_MAX)
-                for (int k = 1; k <= n; k++) // 中间节点
+            if (graph[i-1][j-1] != INT_MAX)//这里一定要判断，如果中间节点和主节点没有联系，那就没有意义
+                for (int k = 1; k <= n; k++) 
                     if (graph[i-1][j-1] + graph[j-1][k-1] < graph[i-1][k-1])
                         graph[i-1][k-1] = graph[i-1][j-1] + graph[j-1][k-1];
         }
