@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// ST
+// ST的复习板
 
 int n, m;
 const int maxn = 1e5 + 5;
