@@ -7,7 +7,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-// 曼哈顿距离的解释
+// 曼哈顿距离
 int main()
 {
   int x[2], y[2];
