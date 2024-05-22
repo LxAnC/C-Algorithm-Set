@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int maxn = 1e5 + 10;
+
+//原理
+//就是按照价值比上体积的一个比值来排序，然后通过这个比值，
+//依次装满背包，装不下，按照这个比例直到撞满
 typedef struct Bags
 {
     double s;
@@ -20,6 +24,7 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> b[i].value;
     for (int i = 0; i < n; i++)
+
     {
         cin >> b[i].weight;
         b[i].s = (double)b[i].value / b[i].weight;
