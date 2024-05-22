@@ -3,14 +3,14 @@ using namespace std;
 const int maxn = 1e5 + 10;
 typedef struct Bags
 {
-    int s;
+    double s;
     int weight;
     int value;
 } Bags;
 Bags b[maxn];
-bool cmp(int i,int j)
+bool cmp(Bags s1, Bags s2)
 {
-    return b[i].s>b[j].s;
+    return s1.s > s2.s;
 }
 int main()
 {
@@ -22,15 +22,31 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin >> b[i].weight;
-        b[i].s = b[i].weight / b[i].value;
+        b[i].s = (double)b[i].value / b[i].weight;
     }
     sort(b, b + n, cmp);
-    for (int i = 0; i < n; i++)
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << b[i].s << " ";
+    //     cout << b[i].value << " ";
+    //     cout << b[i].weight;
+    //     cout << endl;
+    // }
+    int c = m;
+    double ret = 0.0;
+    int i;
+    for (i = 0; i < n; i++)
     {
-        cout << b[i].s << endl;
-        cout << b[i].value;
-        cout << b[i].weight;
-        cout << endl;
+        if (c >= b[i].weight)
+        {
+            ret += b[i].value;
+            c -= b[i].weight;
+        }
+        else
+            break;
     }
-    return 0;
+    if (i < n &&c!=0)
+    ret+=c*b[i].s;
+    cout<<ret;
+        return 0;
 }
