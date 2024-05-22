@@ -42,9 +42,10 @@ signed main()
         g[x][y]=min(g[x][y],z);
     }
     dijkstra();
-    for (int i = 1; i <= n; i++)
-    {
-        cout << dist[i];
-        cout << endl;
-    }
+    // for (int i = 1; i <= n; i++)
+    // {
+    //     cout << dist[i];
+    //     cout << endl;
+    // }//输出所有的距离
+    cout<<dist[n]<<endl;//最后一个即我们需要的值
 }
