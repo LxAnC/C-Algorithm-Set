@@ -7,7 +7,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+//欧几里得距离
 int main()
 {
    int x[2],y[2];
