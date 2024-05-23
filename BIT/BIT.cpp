@@ -5,6 +5,7 @@
 // 当然，树状数组能维护的不局限于加法，支持的操作也不止这两种，甚至有大佬能用树状数组实现平衡树
 // https://zhuanlan.zhihu.com/p/93795692
 // 还有这篇https://www.cnblogs.com/Last--Whisper/p/13823614.html#%E4%BB%80%E4%B9%88%E6%98%AF-bit-
+// https://blog.csdn.net/TheWayForDream/article/details/118436732
 #include <bits/stdc++.h>
 using namespace std;
 #define MAXN 50005
