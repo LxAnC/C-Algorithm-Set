@@ -8,56 +8,56 @@
 #include <cstring>
 #define MAXN 50005
 #define lowbit(x) ((x) & (-x))
-int tree[MAXN];
-inline void update(int i, int x)
-{
-    for (int pos = i; pos < MAXN; pos += lowbit(pos))//这里对分别的阵营做更新
-        tree[pos] += x;//表示0-pos的总人数
-}
-inline int query(int n)
-{
-    int ans = 0;
-    for (int pos = n; pos; pos -= lowbit(pos))//遍历所有区域的总人数
-        ans += tree[pos];//分别把各段的加起来
-    return ans;
-}
-inline int query(int a, int b)
-{
-    return query(b) - query(a - 1);//因为b-a+1是总距离，所以b-  a-1就是合理的减数
-}
-int main()
-{
-    int cases;
-    scanf("%d", &cases);
-    for (int I = 1; I <= cases; ++I)
-    {
-        memset(tree, 0, sizeof(tree));
-        int n, x, a, b;
-        char opr[10];
-        printf("Case %d:\n", I);
-        scanf("%d", &n);
-        for (int i = 1; i <= n; ++i)
-        {
-            scanf("%d", &x);
-            update(i, x);
-        }
-        while (scanf("%s", opr), opr[0] != 'E')
-        {
-            switch (opr[0])
-            {
-            case 'A':
-                scanf("%d%d", &a, &b);
-                update(a, b);
-                break;
-            case 'S':
-                scanf("%d%d", &a, &b);
-                update(a, -b);
-                break;
-            case 'Q':
-                scanf("%d%d", &a, &b);
-                printf("%d\n", query(a, b));
-            }
-        }
-    }
-    return 0;
-}
+// int tree[MAXN];
+// inline void update(int i, int x)
+// {
+//     for (int pos = i; pos < MAXN; pos += lowbit(pos))//这里对分别的阵营做更新
+//         tree[pos] += x;//表示0-pos的总人数
+// }
+// inline int query(int n)
+// {
+//     int ans = 0;
+//     for (int pos = n; pos; pos -= lowbit(pos))//遍历所有区域的总人数
+//         ans += tree[pos];//分别把各段的加起来
+//     return ans;
+// }
+// inline int query(int a, int b)
+// {
+//     return query(b) - query(a - 1);//因为b-a+1是总距离，所以b-  a-1就是合理的减数
+// }
+// int main()
+// {
+//     int cases;
+//     scanf("%d", &cases);
+//     for (int I = 1; I <= cases; ++I)
+//     {
+//         memset(tree, 0, sizeof(tree));
+//         int n, x, a, b;
+//         char opr[10];
+//         printf("Case %d:\n", I);
+//         scanf("%d", &n);
+//         for (int i = 1; i <= n; ++i)
+//         {
+//             scanf("%d", &x);
+//             update(i, x);
+//         }
+//         while (scanf("%s", opr), opr[0] != 'E')
+//         {
+//             switch (opr[0])
+//             {
+//             case 'A':
+//                 scanf("%d%d", &a, &b);
+//                 update(a, b);
+//                 break;
+//             case 'S':
+//                 scanf("%d%d", &a, &b);
+//                 update(a, -b);
+//                 break;
+//             case 'Q':
+//                 scanf("%d%d", &a, &b);
+//                 printf("%d\n", query(a, b));
+//             }
+//         }
+//     }
+//     return 0;
+// }
