@@ -11,19 +11,19 @@
 int tree[MAXN];
 inline void update(int i, int x)
 {
-    for (int pos = i; pos < MAXN; pos += lowbit(pos))
-        tree[pos] += x;
+    for (int pos = i; pos < MAXN; pos += lowbit(pos))//这里对分别的阵营做更新
+        tree[pos] += x;//表示0-pos的总人数
 }
 inline int query(int n)
 {
     int ans = 0;
-    for (int pos = n; pos; pos -= lowbit(pos))
-        ans += tree[pos];
+    for (int pos = n; pos; pos -= lowbit(pos))//遍历所有区域的总人数
+        ans += tree[pos];//分别把各段的加起来
     return ans;
 }
 inline int query(int a, int b)
 {
-    return query(b) - query(a - 1);
+    return query(b) - query(a - 1);//因为b-a+1是总距离，所以b-  a-1就是合理的减数
 }
 int main()
 {
