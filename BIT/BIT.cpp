@@ -6,26 +6,27 @@
 // https://zhuanlan.zhihu.com/p/93795692
 // 还有这篇https://www.cnblogs.com/Last--Whisper/p/13823614.html#%E4%BB%80%E4%B9%88%E6%98%AF-bit-
 // https://blog.csdn.net/TheWayForDream/article/details/118436732
-#include<bits/stdc++.h>
+// 以上的链接可以配合使用
+#include <bits/stdc++.h>
 using namespace std;
 #define MAXN 50005
-#define lowbit(x) (x&(-x))
+#define lowbit(x) (x & (-x))
 int tree[MAXN];
 inline void update(int i, int x)
 {
-    for (int pos = i; pos < MAXN; pos += lowbit(pos))//这里对分别的阵营做更新
-        tree[pos] += x;//表示0-pos的总人数
+    for (int pos = i; pos < MAXN; pos += lowbit(pos)) // 这里对分别的阵营做更新
+        tree[pos] += x;                               // 表示0-pos的总人数
 }
 inline int query(int n)
 {
     int ans = 0;
-    for (int pos = n; pos; pos -= lowbit(pos))//遍历所有区域的总人数
-        ans += tree[pos];//分别把各段的加起来
+    for (int pos = n; pos; pos -= lowbit(pos)) // 遍历所有区域的总人数
+        ans += tree[pos];                      // 分别把各段的加起来
     return ans;
 }
 inline int query(int a, int b)
 {
-    return query(b) - query(a - 1);//因为b-a+1是总距离，所以b-  a-1就是合理的减数
+    return query(b) - query(a - 1); // 因为b-a+1是总距离，所以b-  a-1就是合理的减数
 }
 int main()
 {
