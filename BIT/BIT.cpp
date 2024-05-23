@@ -4,6 +4,7 @@
 // 区间查询：查询一个区间内所有元素的和
 // 当然，树状数组能维护的不局限于加法，支持的操作也不止这两种，甚至有大佬能用树状数组实现平衡树
 // https://zhuanlan.zhihu.com/p/93795692
+//具体文献还有这篇https://www.cnblogs.com/Last--Whisper/p/13823614.html#%E4%BB%80%E4%B9%88%E6%98%AF-bit-
 #include <bits/stdc++.h>
 using namespace std;
 #define MAXN 50005
@@ -19,7 +20,7 @@ void Update(int i, int x)
 inline int query(int x)
 {
     int ret = 0;
-    for (int i = 1; i < MAXN; i += lowbit(i))
+    for (int i = x; i; i -= lowbit(i))
         ret += tree[i];
     return ret;
 }
