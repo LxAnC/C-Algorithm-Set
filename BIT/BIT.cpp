@@ -1,13 +1,33 @@
 // 树状数组（Binary Index Tree, BIT）也是很多OIer心中最简洁优美的数据结构之一。
-// 最简单的树状数组支持两种操作，时间复杂度均为 
+// 最简单的树状数组支持两种操作，时间复杂度均为
 // 单点修改：更改数组中一个元素的值
 // 区间查询：查询一个区间内所有元素的和
 // 当然，树状数组能维护的不局限于加法，支持的操作也不止这两种，甚至有大佬能用树状数组实现平衡树
-//https://zhuanlan.zhihu.com/p/93795692
-#include <cstdio>
-#include <cstring>
+// https://zhuanlan.zhihu.com/p/93795692
+#include <bits/stdc++.h>
+using namespace std;
 #define MAXN 50005
 #define lowbit(x) ((x) & (-x))
+int tree[MAXN];
+void Update(int i,int x)
+{
+        for(int i=i;i<=MAXN;i+=lowbit(i))
+        {
+            tree[i]+=x;
+        }
+}
+
+
+int main()
+{
+    int n, a, b,x;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        Update(i,cin>>x);
+    }
+}
+
 // int tree[MAXN];
 // inline void update(int i, int x)
 // {
