@@ -9,22 +9,32 @@ using namespace std;
 #define MAXN 50005
 #define lowbit(x) ((x) & (-x))
 int tree[MAXN];
-void Update(int i,int x)
+void Update(int i, int x)
 {
-        for(int i=i;i<=MAXN;i+=lowbit(i))
-        {
-            tree[i]+=x;
-        }
+    for (int i = i; i <= MAXN; i += lowbit(i))
+    {
+        tree[i] += x; // 这里如果对减少人数单独列一个函数更麻烦
+    }
 }
-
+inline int query(int x)
+{
+    int ret = 0;
+    for (int i = 1; i < MAXN; i += lowbit(i))
+        ret += tree[i];
+    return ret;
+}
+inline int query(int x, int y)
+{
+    return tree[x] - tree[y - 1];
+}
 
 int main()
 {
-    int n, a, b,x;
+    int n, a, b, x;
     cin >> n;
     for (int i = 1; i <= n; i++)
     {
-        Update(i,cin>>x);
+        Update(i, cin >> x);
     }
 }
 
