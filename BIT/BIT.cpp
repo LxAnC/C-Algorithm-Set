@@ -7,55 +7,6 @@
 // 还有这篇https://www.cnblogs.com/Last--Whisper/p/13823614.html#%E4%BB%80%E4%B9%88%E6%98%AF-bit-
 // https://blog.csdn.net/TheWayForDream/article/details/118436732
 // 以上的链接可以配合使用
-#include<bits/stdc++.h>
-using namespace std;
-
-#define N 1000
-#define lowbit(i) (i&(-i))
-int n,x,y;
-int tree[N];//表示每一个序列的值
-void update(int i,int x)
-{
-    for(int i=i;i<N;i+=lowbit(i))
-    tree[i]+=x;//代表每一个范围都要加
-}
-int query(int n)
-{
-    int ret=0;
-    for(int i=n;i;i-=lowbit(i))
-        ret+=tree[i];
-    return ret;
-}
-int query(int left,int right)
-{
-    return tree[right]-tree[left-1];
-}
-int main()
-{
-    cin>>n;
-    for(int i=1;i<=n;i++)
-    {
-        cin>>x>>y;
-        update(x,y);
-
-    }
-    for(int i=1;i<=n;i++)
-    {
-        cin>>x>>y;
-        cout<<query(x,y);
-    }
-    return 0;
-}
-
-
-
-
-
-
-
-
-
-
 #include <bits/stdc++.h>
 using namespace std;
 #define MAXN 50005
