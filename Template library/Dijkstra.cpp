@@ -1,11 +1,14 @@
+//迪杰斯特拉的代码模版
+//自己手写的
+//单源最短路径
 #include <iostream>
 #define int long long
 using namespace std;
 const int maxn = 1e3 + 10;
 int n,m;
-int dist[maxn];
-int g[maxn][maxn];
-bool st[maxn];
+int dist[maxn];//代表距离
+int g[maxn][maxn];//地图
+bool st[maxn];//代表有没有存过
 
 void dijkstra()
 {
