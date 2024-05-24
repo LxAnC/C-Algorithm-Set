@@ -19,6 +19,13 @@ void update(int i,int x)
     for(int i=i;i<N;i+=lowbit(i))
     tree[i]+=x;//代表每一个范围都要加
 }
+int query(int n)
+{
+    int ret=0;
+    for(int i=n;i;i-=lowbit(i))
+        ret+=tree[i];
+    return ret;
+}
 int query(int left,int right)
 {
     return tree[right]-tree[left-1];
