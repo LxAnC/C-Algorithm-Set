@@ -17,12 +17,24 @@ int tree[N];//表示每一个序列的值
 void update(int i,int x)
 {
     for(int i=i;i<N;i+=lowbit(i))
-    tree[i]+=x;
+    tree[i]+=x;//代表每一个范围都要加
 }
+void 
 int main()
 {
     cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>x>>y;
+        update(x,y);
 
+    }
+    for(int i=1;i<=n;i++)
+    {
+        cin>>x>>y;
+        query(x,y);
+    }
+    return 0;
 }
 
 
