@@ -19,7 +19,10 @@ void update(int i,int x)
     for(int i=i;i<N;i+=lowbit(i))
     tree[i]+=x;//代表每一个范围都要加
 }
-void 
+int query(int left,int right)
+{
+    return tree[right]-tree[left-1];
+}
 int main()
 {
     cin>>n;
@@ -32,7 +35,7 @@ int main()
     for(int i=1;i<=n;i++)
     {
         cin>>x>>y;
-        query(x,y);
+        cout<<query(x,y);
     }
     return 0;
 }
