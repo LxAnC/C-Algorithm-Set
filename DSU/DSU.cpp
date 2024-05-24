@@ -1,11 +1,46 @@
 //洛谷模版第一题
 #include<bits/stdc++.h>
 using namespace std;
-#define N 1000;
+#define N 1000
 int prex[N];
-int n,m
-int z
+int n,m;
+int x,y,z;
+int root(int x)
+{
+    return prex[x]==x?x:prex[x]=root(prex[x]);
+}
 
+void merge(int x,int y)
+{
+    prex[root(y)]=prex[root(x)];
+}
+bool iscon(int x,int y)
+{
+    if(root(x)==root(y))
+    return 1;
+    return 0;
+}
+
+
+
+int main()
+{
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)
+      prex[i]=i;//初始化
+    for(int i=1;i<=m;i++)
+    {
+        cin>>z>>x>>y;
+        if(z==1)
+        {
+            merge(x,y);
+        }
+        else if(z==2)
+          cout<<(iscon(x,y)?"Y":"N";);
+    }
+    return 0;
+    
+}
 
 
 
