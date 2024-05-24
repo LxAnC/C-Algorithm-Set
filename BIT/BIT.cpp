@@ -7,6 +7,32 @@
 // 还有这篇https://www.cnblogs.com/Last--Whisper/p/13823614.html#%E4%BB%80%E4%B9%88%E6%98%AF-bit-
 // https://blog.csdn.net/TheWayForDream/article/details/118436732
 // 以上的链接可以配合使用
+#include<bits/stdc++.h>
+using namespace std;
+
+#define N 1000
+#define lowbit(i) (i&(-i))
+int n,x,y;
+int tree[N];//表示每一个序列的值
+void update(int i,int x)
+{
+    for(int i=i;i<N;i+=lowbit(i))
+}
+int main()
+{
+    cin>>n;
+
+}
+
+
+
+
+
+
+
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define MAXN 50005
