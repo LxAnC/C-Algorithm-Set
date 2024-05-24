@@ -36,7 +36,7 @@ int main()
             merge(x,y);
         }
         else if(z==2)
-          cout<<(iscon(x,y)?"Y":"N";);
+          cout<<(iscon(x,y)?"Y":"N");
     }
     return 0;
     
