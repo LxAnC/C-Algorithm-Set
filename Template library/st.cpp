@@ -2,7 +2,6 @@
 using namespace std;
 // 本程序用于学习st表的查询
 // 可以最小的时间复杂度来实现某一个区间的最大值
-// st
 int n, m;
 int x, y;
 const int maxn = 1e6 + 5;
