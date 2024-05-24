@@ -1,47 +1,4 @@
-#include <iostream>
-using namespace std;
 
-int n, m;
-const int maxn = 1e3 + 10;
-int pre[maxn]; // 祖先
-int root(int i)
-{
-    return pre[i] == i ? i : pre[i] = root(pre[i]);
-}
-void init()
-{
-    for (int i = 1; i <= n; i++)
-    {
-        pre[i] = i;
-    }
-}
-void merge(int x, int y)
-{
-    pre[root(x)] = root(y);
-}
-bool find(int x, int y)
-{
-    return root(x) == root(y);
-}
-int main()
-{
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    cin >> n >> m;
-    init();
-
-    for (int i = 1; i <= m; i++)
-    {
-        int x, y, z;
-        cin >> x >> y >> z;
-        if (x == 2)
-          {  cout << (find(y, z)?"Y":"N")<< endl;}
-        else if (x == 1)
-            merge(y, z);
-    }
-    return 0;
-}
 /**
  * Copyright © 2024 LxAnC. All rights reserved.
  *
