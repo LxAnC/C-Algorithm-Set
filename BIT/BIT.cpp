@@ -17,6 +17,7 @@ int tree[N];//表示每一个序列的值
 void update(int i,int x)
 {
     for(int i=i;i<N;i+=lowbit(i))
+    tree[i]+=x;
 }
 int main()
 {
