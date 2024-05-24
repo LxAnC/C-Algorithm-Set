@@ -1,3 +1,13 @@
+//洛谷模版第一题
+#include<bits/stdc++.h>
+using namespace std;
+#define N 1000;
+int prex[N];
+int n,m
+int z
+
+
+
 
 /**
  * Copyright © 2024 LxAnC. All rights reserved.
