@@ -12,7 +12,7 @@ int root(int x)
 
 void merge(int x,int y)
 {
-    prex[root(y)]=prex[root(x)];
+    prex[root(y)]=root(x);
 }
 bool iscon(int x,int y)
 {
