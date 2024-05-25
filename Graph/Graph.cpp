@@ -16,10 +16,16 @@ int Nog[N][N]; // 不过达到10000（1e4）就不行了
 
 //第三种
 //链式前向星
-struct edge{
+struct Edge{
     int to,w,next;
-};
+}edge[N];
+Edge b[N];
 int head[N];
+int main()
+{
+    cin>>b[0].to;
+    return 0;
+}
 
 
 
