@@ -20,7 +20,7 @@ struct Edge
 {
     int to, w, next;
 } edge[N];int head[N];
-int cnt;//表示当前边的编号
+int cnt=1;//表示当前边的编号
 // edge是边的数组
 // head是顶点的数组
 void add(int from, int to, int w)
@@ -34,14 +34,15 @@ void add(int from, int to, int w)
     head[from]=cnt++;
 
 }
-void bianli(int i)
-{
-    while(edge[head[i]].next!=0)
-    {
-        cout<<edge[head[i]].next<<endl;
-        i=edge[head[i]].next;
-    }
-}
+// void bianli(int i)
+// {
+//         if(edge[head[i]].next==0)
+//         {cout<<edge[head[i]].to<<endl;
+//         return ;}
+//         else
+//         cout<<edge[head[i]].to<<endl;
+//         bianli(edge[head[i]].next);
+// }残缺代码
 
     Edge b[N];
 int n,m,x,y,z;
