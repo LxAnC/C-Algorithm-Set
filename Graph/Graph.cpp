@@ -36,7 +36,7 @@ void add(int from, int to, int w)
 }
 void bianli(int i)
 {
-    while(edge[i].next!=0)
+    while(edge[head[i]].next!=0)
     {
         cout<<edge[head[i]].next<<endl;
         i=edge[head[i]].next;
