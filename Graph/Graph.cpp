@@ -2,9 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define N 1000
+//测试数据
 // 无向图
 // 邻接矩阵
-int Nog[N][N]; // 不过达到10000（1e4）就不行了
+// int Nog[N][N]; // 不过达到10000（1e4）就不行了
 
 // 邻接表的做法
 // struct edge
@@ -33,12 +34,30 @@ void add(int from, int to, int w)
     head[from]=cnt++;
 
 }
+void bianli(int i)
+{
+    while(edge[i].next!=0)
+    {
+        cout<<edge[head[i]].next<<endl;
+        i=edge[head[i]].next;
+    }
+}
 
     Edge b[N];
-
+int n,m,x,y,z;
 int main()
 {
-    cin >> b[0].to;
+    cin>>n>>m;
+    for(int i=1;i<=m;i++)
+    {
+        cin>>x>>y>>z;
+        add(x,y,z);
+    }
+    for(int i=1;i<=n;i++)
+    {
+        cout<<i<<"的节点总共有多少条边，分别是"<<endl;
+        bianli(i);
+    }
     return 0;
 }
 
