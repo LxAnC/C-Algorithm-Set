@@ -1,7 +1,7 @@
 //
    //* @Author: LxAnC
    //* @Email : LxAnC76@gmail.com
-   //* @Date  : 2024-05-25 14:22
+   //* @Date  : 2024-05-25 14:24
 //  
 #include <bits/stdc++.h>
 using namespace std;
@@ -17,5 +17,6 @@ int n,m,x,y,z,ans;
 
 int main()
 {
+   
    return 0;
 }
