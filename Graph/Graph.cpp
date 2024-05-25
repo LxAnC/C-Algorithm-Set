@@ -2,7 +2,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define N 1000
-//测试数据
+// //测试数据
+// //4 5 
+// 1 2 1 
+// 2 3 3
+// 3 4 5
+// 1 3 4
+// 1 4 2
 // 无向图
 // 邻接矩阵
 // int Nog[N][N]; // 不过达到10000（1e4）就不行了
@@ -44,7 +50,11 @@ void add(int from, int to, int w)
 //         bianli(edge[head[i]].next);
 // }残缺代码
 
-    Edge b[N];
+void bl(int x)
+{
+    for(int i=head[x];i;i=edge[i].next)
+    cout<<edge[i].to<<endl;
+}
 int n,m,x,y,z;
 int main()
 {
@@ -57,7 +67,8 @@ int main()
     for(int i=1;i<=n;i++)
     {
         cout<<i<<"的节点总共有多少条边，分别是"<<endl;
-        bianli(i);
+        // bianli(i);
+        bl(i);
     }
     return 0;
 }
