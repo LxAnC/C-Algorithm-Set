@@ -10,7 +10,7 @@ using namespace std;
 #define f2(i) for (int i = n; i; i--)
 #define first f
 #define second s
-#define Mod 1000000007//一般题目会给一个数据
+#define Mod 1000000007 // 一般题目会给一个数据
 #define max ma
 #define min mi
 typedef long long ll;
@@ -47,10 +47,24 @@ ll qpow(ll a, ll n)
 }
 // 递归虽然简洁，但是很费时间
 //  这里我们用非递归的方式举例
-
+ll qpow2(ll a, ll n)
+{
+   int ret = 1;
+   while (n)
+   {
+      if (n & 1)
+      {
+         ret *= a;
+      }
+      a *= a;
+      n = n >> 1;
+   }
+   return ret;
+}
 int main()
 {
    n = 7;
+   cout<<qpow2(n,10)<<endl;
    // 求n的10次方
    // 方法一
    //  cout<<n*n*n*n*n*n*n*n*n*n<<endl;
