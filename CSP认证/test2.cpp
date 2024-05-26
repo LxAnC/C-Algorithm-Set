@@ -1,42 +1,55 @@
-#include <iostream>
-#include <algorithm>
-#include <string>
-#include <unordered_map>
+//
+//* @Author: LxAnC
+//* @Email : LxAnC76@gmail.com
+//* @Date  : 2024-05-26 22:55
+//
+#include <bits/stdc++.h>
 using namespace std;
-#define maxn 10005
-int n, m;
-int x, y, z;
-int i;
+#define N 1e5 + 5
+#define f1(i) for (int i = 1; i <= n; i++)
+#define f2(i) for (int i = n; i; i--)
+#define first f
+#define second s
+#define max ma
+#define min mi
 
-unordered_map<string, int> nums(maxn);
-unordered_map<string, bool> ifs(maxn);
-
+int n, m, x, y, z, ans;
+set<string> s1;
+set<string> s2;
 int main()
 {
+    int n, m;
     cin >> n >> m;
-    int x = 0, y = 0;
-    string A, B;
+    string s;
     for (int i = 1; i <= n; i++)
     {
-        cin >> A;
-        transform(A.begin(), A.end(), A.begin(), ::tolower);
-        if (nums[A] == 0)
-            y++;
-        nums[A] += 1;
+        cin >> s;
+        for (int i = 0; i < s.length(); i++)
+            if (s[i] >= 'A' && s[i] <= 'Z')
+                s[i] += 32;
+        s1.insert(s);
     }
     for (int i = 1; i <= m; i++)
     {
-        cin >> A;
-        transform(A.begin(), A.end(), A.begin(), ::tolower);
-        if (nums[A] != 0 && ifs[A] == false)
-        {
-            x++;
-            ifs[A] = true;
-        }
-        else if (nums[A] == 0)
-           { y++;nums[A]++;}
+        cin >> s;
+        for (int i = 0; i < s.length(); i++)
+            if (s[i] >= 'A' && s[i] <= 'Z')
+                s[i] += 32;
+        s2.insert(s);
     }
-    cout << x << endl;
-    cout << y << endl;
+    int num1 = 0, num2 = 0;
+    for (auto it : s1)
+    {
+        auto it1 = s2.lower_bound(it);
+        if (it1 != s2.end() && (*it1) == (it))
+            num1++;
+    }
+    for (auto it : s2)
+    {
+        s1.insert(it);
+    }
+    num2 = s1.size();
+    cout << num1 << " " <<endl<< num2 << endl;
+
     return 0;
 }
