@@ -17,7 +17,7 @@ int n, m, x, y, z, ans;
 // 先看下面的34行
 
 // 所以这里使用递归快速幂来求幂达到O(logn)的级别
-void qpow(int a, int n)
+int qpow(int a, int n)
 {
    if (n == 0)
       return 1;
