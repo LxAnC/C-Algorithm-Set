@@ -12,6 +12,7 @@ using namespace std;
 #define second s
 #define max ma
 #define min mi
+typedef long long ll;
 int n, m, x, y, z, ans;
 // 平方求幂环节
 // 先看下面的34行
@@ -29,6 +30,22 @@ int qpow(int a, int n)
    else
       return qpow(a, n - 1) * a;
 }
+// 一般题目中由于太大都会取模一个数,例如：
+#define Mod 1e9+7
+ll qpow(ll a, ll n)
+{
+   if (n == 0)
+      return 1;
+   else if (n % 2 == 1)
+      return qpow(a, n - 1) * a % Mod;
+   else if (n % 2 == 0)
+   {
+      int temp = qpow(a, n / 2) % Mod;
+      return temp * temp % Mod;
+   }
+}
+// 递归虽然简洁，但是很费时间
+//  这里我们用非递归的方式举例
 
 int main()
 {
