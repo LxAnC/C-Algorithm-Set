@@ -34,5 +34,19 @@ int main()
    //只用算四次
 
 
+   //所以这里使用递归快速幂来求幂达到O(logn)的级别
+   void qpow(int a,int n)
+   {
+      if(n==0)
+      return 1;
+      else if(n%2==0)
+      {
+         int temp=qpow(a,n/2);
+         return temp*temp;
+      }
+      else 
+      return qpow(a,n-1)*a;
+   }
+
    return 0;
 }
