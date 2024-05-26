@@ -1,33 +1,34 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define maxn 100000
-int cnt[101][101];
-struct node {
-    int times,nums,cur;
-}node[maxn];
-int main()
-{
-    int n,m,len,x,fo=-1;
-    cin>>n>>m;
-    for(int i=0;i<n;i++)
-    {
-        cin>>len;
-        while(len--)
-        {
-            cin>>x;
-            if(node[x].cur!=i+1||node[x].times==0)
-            {
-                node[x].times++;
-                node[x].nums++;
-                node[x].cur=i+1;
-            }
-            else if(node[x].times)
-            node[x].nums++;
+#define N 1000010
+//大佬的做法
+
+template <class T>
+inline T read(T& a){
+    T x = 0, s = 1; 
+    char c = getchar(); 
+    while(!isdigit(c)){ if(c == '-') s = -1; c = getchar(); }
+    while(isdigit(c)){ x = x * 10 + (c ^ '0'); c = getchar(); }
+    return a = x * s; 
+}
+
+int n, m; 
+map <int, int> g1; 
+map <int, int> g2; 
+
+int main(){
+    read(n), read(m); 
+    for(int i = 1; i <= n; i++){
+        int l; read(l); 
+        bitset <N> vis(0); 
+        for(int j = 1; j <= l; j++){
+            int x; read(x); 
+            if(!vis[x]) g1[x]++, vis[x] = 1; 
+            g2[x]++; 
         }
     }
-    for(int i=1;i<=m;i++)
-    {
-        cout<<node[i].times<<" "<<node[i].nums<<endl;
+    for(int i = 1; i <= m; i++){
+        cout << g1[i] << " " << g2[i] << endl; 
     }
-    return 0;
+    return 0; 
 }
