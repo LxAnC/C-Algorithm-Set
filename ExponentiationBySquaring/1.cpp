@@ -10,6 +10,7 @@ using namespace std;
 #define f2(i) for (int i = n; i; i--)
 #define first f
 #define second s
+#define Mod 1000000007//一般题目会给一个数据
 #define max ma
 #define min mi
 typedef long long ll;
@@ -31,7 +32,7 @@ int qpow(int a, int n)
       return qpow(a, n - 1) * a;
 }
 // 一般题目中由于太大都会取模一个数,例如：
-#define Mod 1e9+7
+
 ll qpow(ll a, ll n)
 {
    if (n == 0)
