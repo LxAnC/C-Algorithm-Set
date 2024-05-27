@@ -106,5 +106,6 @@
       }
     }
   ],
-  "fonted.font": "Fira Code"
+  "fonted.font": "Fira Code",
+  "C_Cpp.errorSquiggles": "enabled"
 }
