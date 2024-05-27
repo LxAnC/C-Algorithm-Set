@@ -14,33 +14,46 @@ using namespace std;
 #define min mi
 
 int n, m, x, y, z, ans;
-int k1,k2;
+int k1, k2;
 // 简单模拟题
 
-void check(int x)
-{
-    if(x<k1)
-    {
-        ans++;
-        k1=k2;
-    }
-    else 
-    {
-        ans++;
-        check(x-k1);
-    }
-}
+// void check(int x)
+// {
+//     if(x<k1)
+//     {
+//         ans++;
+//         k1=k2;
+//     }
+//     else
+//     {
+//         ans++;
+//         check(x-k1);
+//     }
+// }
 
 int main()
 {
     cin >> n >> k2;
-    k1=k2;
+    k1 = k2;
     int a[N];
     for (int i = 1; i <= n; i++)
     {
         cin >> a[i];
-        check(a[i]);
     }
-    cout<<ans<<endl;
+    int i = 1;
+    while (i <= n)
+    {
+        if (k1 >= a[i])
+        {
+            k1 -= a[i];
+            i++;
+        }
+        else
+        {
+            ans++;
+            k1 = k2;
+        }
+    }
+    cout << ans+1 << endl;
     return 0;
 }
