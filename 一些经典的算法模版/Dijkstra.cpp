@@ -33,15 +33,15 @@ void dijkstra()
         for (int i = 1; i <= n; i++)
         {
 
-            if (st[i] == 0 && (t == -1) || dist[i] < dist[t])
+            if (st[i] == 0 && (t == -1 || dist[i] < dist[t]))
             {
                 t = i;
             }
-            st[t] = true;
-            for (int i = 1; i <= n; i++)
-                if (st[i] == 0)
-                    dist[i] = min(dist[t] + g[t][i], dist[i]);
         }
+        st[t] = true;
+        for (int i = 1; i <= n; i++)
+            if (st[i] == 0)
+                dist[i] = min(dist[t] + g[t][i], dist[i]);
     }
 }
 
@@ -53,7 +53,7 @@ signed main()
     {
         int x, y, z;
         cin >> x >> y >> z;
-        g[x][y] = z;
+        g[x][y] = min(g[x][y], z);
     }
     dijkstra();
     cout << "单源最短路径如下" << endl;
