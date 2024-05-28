@@ -32,6 +32,8 @@ signed main()
         ret+=a[i]*(i-1);
         for(int i=1;i<=10;i++)
          ret+=a[i]*pow(10,i)+cnt[i];//计算
+         //这里有点儿不懂
+         //四题结束
     }
     cout<<ret;
     return 0;
