@@ -16,7 +16,8 @@ using namespace std;
 #define min mi
 
 int n, m, x, y, z, ans;
-int a[maxn], cnt[11];
+int a[maxn], cnt[11];//存数据和长度的数组
+//通过分析式子
 signed main()
 {
     cin >> n;
