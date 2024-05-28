@@ -3,6 +3,7 @@
 //* @Email : LxAnC76@gmail.com
 //* @Date  : 2024-05-28 16:07
 //
+//
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -30,7 +31,7 @@ signed main()
     {
         ret+=a[i]*(i-1);
         for(int i=1;i<=10;i++)
-         ret+=a[i]*pow(10,i)+cnt[i];
+         ret+=a[i]*pow(10,i)+cnt[i];//计算
     }
     cout<<ret;
     return 0;
