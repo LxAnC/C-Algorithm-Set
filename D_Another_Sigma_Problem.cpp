@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>>
+#include <bits/stdc++.h>
 #define int long long
 const int m = 998244353;
 const int N = (int)2e5 + 10;
@@ -21,7 +21,7 @@ signed main()
         c[b[i]]--;//放串
         for(int j=1;j<=9;j++)
         {
-            ret+=a[i]*(long long int)pow(10,j);
+            
         }
     }
 }
