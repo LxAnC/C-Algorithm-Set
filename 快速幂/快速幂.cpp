@@ -24,13 +24,13 @@ int qpow(int a, int n)
 {
    if (n == 0)
       return 1;
-   else if (n % 2 == 0)
+   else if (n % 2 == 0)//如果偶数直接拆分
    {
       int temp = qpow(a, n / 2);
       return temp * temp;
    }
    else
-      return qpow(a, n - 1) * a;
+      return qpow(a, n - 1) * a;//不是偶数就单独乘一个再拆分
 }
 // 一般题目中由于太大都会取模一个数,例如：
 
