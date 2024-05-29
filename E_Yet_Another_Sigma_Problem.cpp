@@ -39,36 +39,42 @@
 //     cout << ans << endl;
 //     return 0;
 // }
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-const int N=3e5+10;
+const int N = 3e5 + 10;
 #define ll long long
-int n,tot;
+int n, tot;
 char s[N];
 int trie[N][50];
-ll ans,word[N];
-void insert(char c[]){
-	int u=0;
-	int len=strlen(c);
-	for(int i=0;i<len;i++){
-		word[u]++;
-		int a=c[i]-'a';
-		if(trie[u][a]==0){
-			trie[u][a]=++tot;
-		}
-		u=trie[u][a];
-	}
-	word[u]++;
+ll ans, word[N];
+void insert(char c[])
+{
+    int u = 0;
+    int len = strlen(c);
+    for (int i = 0; i < len; i++)
+    {
+        word[u]++;
+        int a = c[i] - 'a';
+        if (trie[u][a] == 0)
+        {
+            trie[u][a] = ++tot;
+        }
+        u = trie[u][a];
+    }
+    word[u]++;
 }
-int main(){
-	cin>>n;
-	for(int i=1;i<=n;i++){
-		cin>>s;
-		insert(s);
-	}
-	for(int i=1;i<=tot;i++){
-		ans+=word[i]*(word[i]-1)/2;
-	}
-	cout<<ans;
-	return 0;
+int main()
+{
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> s;
+        insert(s);
+    }
+    for (int i = 1; i <= tot; i++)
+    {
+        ans += word[i] * (word[i] - 1) / 2;
+    }
+    cout << ans;
+    return 0;
 }
