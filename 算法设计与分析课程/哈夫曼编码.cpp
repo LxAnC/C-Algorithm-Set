@@ -97,25 +97,93 @@ using namespace std;
 const int N = 1e5 + 10;
 int n, m;
 
-struct node
+typedef struct node
 {
-    int data;
+    char data;
     int weight;
     int rch, lch;
     int parent;
 
-} *HuffmanTree;
+} Hnode, *HuffmanTree;
 
 typedef char **HuffmanCode;
-void initHuffmanTree()
+void initHuffmanTree(HuffmanTree &ht)
 {
+    ht = new Hnode[n * 2];
     for (int i = 1; i <= n; i++)
-        ;
+    {
+        cin >> ht[i].data >> ht[i].weight;
+        ht[i].rch = ht[i].lch = ht[i].parent = -1;
+    }
+}
+void createHuffmanTree(HuffmanTree ht, int n)
+{
+    if (n <= 1)
+        return;
+    int min1, min2;
+    int lpos, rpos;
+    for (int i = n + 1; i <= 2 * n - 1; i++)
+    {
+        min1 = min2 = INT_MAX;
+        for (int j = 1; j <= i - 1; j++)
+        {
+            if (ht[j].weight < min1 && ht[j].parent == -1)
+            {
+                min2 = min1;
+                min1 = ht[j].weight;
+                lpos = j;
+            }
+            else if (ht[j].weight < min2 && ht[j].parent == -1)
+            {
+                min2 = ht[j].weight;
+                rpos = j;
+            }
+            ht[i].weight = min1 + min2;
+            ht[i].lch = lpos;
+            ht[i].rch = rpos;
+            ht[rpos].parent = ht[lpos].parent = i;
+        }
+    }
+}
+void createHuffmanCode(HuffmanTree ht, HuffmanCode &hc, int n)
+{
+    int start = 0;
+    int f = 0;
+    int c = 0;
+    hc = new char *[n * 2+1];
+    char *code = new char[n * 2+1];
+    code[n - 1] = '\0';
+    for (int i = 1; i <= n; i++)
+    {
+        start = n - 1;
+        f = ht[i].parent;
+        c = ht[i].weight;
+        while (f != -1)
+        {
+            start--;
+            if (ht[f].rch == c)
+                code[start] = '1';
+            else
+                code[start] = '0';
+            f = ht[f].parent;
+        }
+        hc[i] = new char[n-start];
+        strcpy(hc[i], &code[start]);
+    }
 }
 int main()
 {
     cin >> n;
     HuffmanTree ht;
     initHuffmanTree(ht);
+    HuffmanCode hc;
+    createHuffmanTree(ht, n);
+    createHuffmanCode(ht, hc, n);
+    for (int i = 1; i <= n; i++)
+    {
+        cout << ht[i].data << "   ";
+        cout << hc[i];
+        cout << endl;
+    }
     return 0;
 }
