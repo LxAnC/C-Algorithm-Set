@@ -62,6 +62,7 @@ ll qpow2(ll a, ll n)
    }
    return ret;
 }
+//20240529复习
 int main()
 {
    n = 7;
