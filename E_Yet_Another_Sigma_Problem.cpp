@@ -5,7 +5,7 @@
 //
 #include <bits/stdc++.h>
 using namespace std;
-#define N 10005
+#define N 300010
 #define f1(i) for (int i = 1; i <= n; i++)
 #define f2(i) for (int i = n; i; i--)
 #define first f
@@ -13,10 +13,10 @@ using namespace std;
 #define max ma
 #define min mi
 
-int n, m, x, y, z, ans, tot;
-int trie[10000][26];
+long long n, m, x, y, z, ans, tot;
+int trie[N][26];
 char ch[N];
-int word[N];
+long long word[N];
 void insert(char s[])
 {
     int u = 0;
@@ -39,9 +39,9 @@ int main()
         cin >> ch;
         insert(ch);
     }
-    for(int i=1;i<=tot;i++)
-    ans+=word[i]*(word[i]-1)/2;
-    cout<<ans;
+    for (int i = 1; i <= tot; i++)
+        ans += word[i] * (word[i] - 1) / 2;
+    cout << ans;
     return 0;
 }
 
