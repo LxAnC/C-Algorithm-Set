@@ -14,8 +14,8 @@ using namespace std;
 #define second s
 #define max ma
 #define min mi
-
-int n, m, x, y, z, ans;
+const int P=998244353;
+int n, m, x, y, z, ans,su;
 int a[maxn], cnt[11];//存数据和长度的数组
 //通过分析式子
 signed main()
@@ -24,18 +24,15 @@ signed main()
     for (int i = 1; i <= n; i++)
     {
         cin >> a[i];
-        cnt[to_string(a[i]).size()]++;
     }
 
     int ret=0;
     for (int i = 1; i <= n; i++)
     {
-        ret+=a[i]*(i-1);
-        for(int i=1;i<=10;i++)
-         ret+=a[i]*pow(10,i)+cnt[i];//计算
-         //这里有点儿不懂
-         //四题结束
+        int sz=pow(10,(int)to_string(a[i]).size());
+        ans=(ans+(su%P)*(sz%P)+(a[i]*(i-1)%P)%P)%P;
+        su=(su+a[i])%P;
     }
-    cout<<ret;
+    cout<<ans;
     return 0;
 }
