@@ -48,20 +48,7 @@ ll qpow1(ll a, ll n)
 }
 // 递归虽然简洁，但是很费时间
 //  这里我们用非递归的方式举例
-ll qpow2(ll a, ll n)
-{
-   int ret = 1;
-   while (n)
-   {
-      if (n & 1)
-      {
-         ret = ret * a;
-      }
-      a *= a;
-      n = n >> 1;
-   }
-   return ret;
-}
+
 //20240529复习
 int main()
 {
