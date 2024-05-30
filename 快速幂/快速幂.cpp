@@ -50,13 +50,11 @@ ll qpow1(ll a, ll n)
 //  这里我们用非递归的方式举例
 ll qpow2(ll a, ll n)
 {
-   if (n == 0)
-      return 1;
    int ret = 1;
    while (n)
    {
       if (n & 1)
-         return ret = ret * a;
+         ret = ret * a;
       a = a * a;
       n = n >> 1;
    }
