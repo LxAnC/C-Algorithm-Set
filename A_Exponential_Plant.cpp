@@ -15,14 +15,15 @@ using namespace std;
 #define min mi
 
 int n, m, x, y, z, ans;
-inline int pow1(int a,int n)
+inline int pow1(int a, int n)
 {
-    int ans=1;
-    while(n)
+    int ans = 1;
+    while (n)
     {
-        if(n&1)ans*=a;
-        a*=a;
-        n=n>>1;
+        if (n & 1)
+            ans *= a;
+        a *= a;
+        n = n >> 1;
     }
     return ans;
 }
@@ -30,14 +31,14 @@ signed main()
 {
     cin >> n;
     int a[N];
-    a[0]=0;
-    for(int i=1;i<=20;i++)
-      a[i]=a[i-1]+pow1(2,i-1);
-    for(int i=0;1;i++)
+    a[0] = 0;
+    for (int i = 1; i <= 50; i++)
+        a[i] = a[i - 1] + pow1(2, i - 1);
+    for (int i = 0; 1; i++)
     {
-        if(a[i]>n)
+        if (a[i] > n)
         {
-            cout<<i;
+            cout << i;
             return 0;
         }
     }
