@@ -3,7 +3,7 @@
 //* @Email : LxAnC76@gmail.com
 //* @Date  : 2024-05-25 14:24
 //
-//20240528复习
+// 20240528复习
 #include <bits/stdc++.h>
 using namespace std;
 #define N 1e5 + 5
@@ -24,13 +24,13 @@ int qpow(int a, int n)
 {
    if (n == 0)
       return 1;
-   else if (n % 2 == 0)//如果偶数直接拆分
+   else if (n % 2 == 0) // 如果偶数直接拆分
    {
       int temp = qpow(a, n / 2);
       return temp * temp;
    }
    else
-      return qpow(a, n - 1) * a;//不是偶数就单独乘一个再拆分
+      return qpow(a, n - 1) * a; // 不是偶数就单独乘一个再拆分
 }
 // 一般题目中由于太大都会取模一个数,例如：
 
@@ -48,12 +48,25 @@ ll qpow1(ll a, ll n)
 }
 // 递归虽然简洁，但是很费时间
 //  这里我们用非递归的方式举例
-
-//20240529复习
+ll qpow2(ll a, ll n)
+{
+   if (n == 0)
+      return 1;
+   int ret = 1;
+   while (n)
+   {
+      if (n & 1)
+         return ret = ret * a;
+      a = a * a;
+      n = n >> 1;
+   }
+   return ret;
+}
+// 20240529复习
 int main()
 {
    n = 7;
-   cout << qpow1(n, 10) << endl;
+   cout << qpow2(n, 10) << endl;
    // 求n的10次方
    // 方法一
    //  cout<<n*n*n*n*n*n*n*n*n*n<<endl;
