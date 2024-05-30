@@ -27,8 +27,9 @@ int main()
         s += i.second;
     }
     vector<int> id(n);
-    itoa(id.begin(), id.end(), 0);
+    iota(id.begin(), id.end(), 0);
     sort(id.begin(), id.end(), [&](int x, int y)
          { return a[x].first < a[y].first; });
+    cout<<a[(int)(s%n)].first;
     return 0;
 }
