@@ -12,19 +12,23 @@ using namespace std;
 #define max ma
 #define min mi
 int n, m, x, y, z, ans;
-int cnt=0;
+int cnt = 0;
 int main()
 {
     cin >> n;
     string s;
     int c;
-    int s=0;
-    vector<pair<string ,int>>a(n);
-    for(auto &i:a)
+    int s = 0;
+    vector<pair<string, int>> a(n);
+    for (auto &i : a)
     {
-        cin>>i.first;
-        cin>>i.second;
-        s+=i.second
+        cin >> i.first;
+        cin >> i.second;
+        s += i.second;
     }
+    vector<int> id(n);
+    itoa(id.begin(), id.end(), 0);
+    sort(id.begin(), id.end(), [&](int x, int y)
+         { return a[x].first < a[y].first; });
     return 0;
 }
