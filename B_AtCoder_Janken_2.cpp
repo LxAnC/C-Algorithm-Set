@@ -30,6 +30,7 @@ int main()
     iota(id.begin(), id.end(), 0);
     sort(id.begin(), id.end(), [&](int x, int y)
          { return a[x].first < a[y].first; });
-    cout<<a[(int)(s%n)].first;
+    int win = id[s % n];
+    cout << a[win].first;
     return 0;
 }
