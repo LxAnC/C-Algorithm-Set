@@ -15,13 +15,17 @@ using namespace std;
 typedef struct node{
     string name;
     int score;
-    int pos;
 }Nums;
 int n, m, x, y, z, ans;
 int cnt=0;
+bool cmp(string s1,string s2)
+{
+    return s1<s2;
+}
 int main()
 {
     cin >> n;
+    int sum=0;
     Nums nums[N];
     map<string, int> hash;
     int sum;
@@ -30,11 +34,13 @@ int main()
         string s;
         int u;
         cin >> nums[i].name;
-        cin >> u;
-        hash[s] = u;
-        cnt++;
+        cin >> nums[i].score;
+        // nums[i].pos=i;
+        sum+=nums[i].score;
     }
-    sum=accumulate(hash.begin(),hash.end(),0)%cnt;
+    sort(nums+1,nums+n+1,cmp);
+    int l=sum%n;
+    cout<<nums[l].name;
 
     
     return 0;
