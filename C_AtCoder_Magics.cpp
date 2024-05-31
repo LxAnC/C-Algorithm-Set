@@ -44,7 +44,13 @@ signed main()
         return a[i][1]<a[j][1];
     });
     vector<int>ans;
-    int max=a[id[0]][0];
-    for(int i=)
+    int max1=a[id[0]][0];
+    for(auto i:id)
+    {
+        if(a[i][0]<max1)continue;
+        ans.push_back(i);
+        max1=d(max1,a[i][0]);
+    }
+    
     return 0;
 }
