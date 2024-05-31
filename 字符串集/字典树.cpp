@@ -12,7 +12,7 @@ using namespace std;
 #define second s
 #define max ma
 #define min mi
-
+//复习线段树
 int n, m, x, y, z, ans, tot;
 int trie[10000][26];
 char ch[N];
