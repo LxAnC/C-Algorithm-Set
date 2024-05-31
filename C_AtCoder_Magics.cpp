@@ -31,6 +31,20 @@ int n,m,x,y,z,ans;
 signed main()
 {
     ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
-    
+    cin>>n;
+    vector<array<int,2> >a(n);
+    for(auto &i:a)
+    {
+        cin>>i[0]>>i[1];
+    }
+    vector<int>id(n);
+    iota(id.begin(),id.end(),0);
+    sort(id.begin(),id.end(),[&](int i,int j)
+    {
+        return a[i][1]<a[j][1];
+    });
+    vector<int>ans;
+    int max=a[id[0]][0];
+    for(int i=)
     return 0;
 }
