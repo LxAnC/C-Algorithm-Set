@@ -3,6 +3,7 @@
    //* @Email : LxAnC76@gmail.com
    //* @Date  : 2024-05-29 22:27
 //  
+//洛谷模版题
 #include <bits/stdc++.h>
 using namespace std;
 #define N 1005
