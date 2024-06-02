@@ -38,7 +38,7 @@ signed main()
         n = n ^ i;
     if (n == 0)
     {
-        cout << "-1" << end;
+        cout << -1<<en;
         return 0;
     }
     cout << n;
