@@ -38,12 +38,15 @@ signed main()
     {
         cin >> a[i];
         mp[a[i]]++;
-        if (mp.count(a[i] - 1) != 0 || mp.count(a[i] + 1) != 0)
-         {   cout << "Yes";
-        return 0;}
     }
     for (int i = 1; i <= m; i++)
         cin >> b[i];
+    for (int i = 1; i <= n; i++)
+        if (mp[a[i] + 1] != 0 || mp[a[i] - 1] != 0)
+        {
+            cout << "Yes" << en;
+            return 0;
+        }
     cout << "No" << en;
     return 0;
 }
