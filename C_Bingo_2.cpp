@@ -30,51 +30,51 @@ int pow(int a, int n)
 int n, m, x, y, z, ans;
 int g[N][N];
 vector<bool> num(N);
-int check(int n)
+bool check(int n)
 {
     // 判断一行是否标记
     int i;
-    int flag = 0;
+    int s = 0;
     for (int j = 0; j < n; j++)
     {
-        flag = 0;
+        s = 0;
         for (i = 1 + n * j; i <= n + n * j; i++)
-            if (num[i] == 0)
-                flag = 1;
-        if (flag == 0)
-            return 1;
+            s += num[i];
+        if (s == n)
+            return true;
     }
-    flag = 0;
+
     for (int j = 1; j <= n; j++)
     {
-        flag = 0;
+        s = 0;
         for (i = 1 * j; i <= 2 * n + j; i += n)
-        {
-            if (num[i] == 0)
-                flag = 1;
-        }
-        if (flag == 0)
-            return 1;
+            s += num[i];
+        if (s == n)
+            return true;
     }
-    flag = 0;
-
+    // 左上
+    s = 0;
     for (i = 1; i <= n * n; i += n + 1)
     {
-        if (num[i] == 0)
-            flag = 1;
+        s += num[i];
     }
-    if (flag == 0)
-        return 1;
-    return -1;
+    if (s == n)
+        return true;
+    // 右上
+    s=0;
+    for (i = n; i <= n * n - n + 1; i += n - 1)
+        s+=num[i];
+    if (s == n)
+        return true;
+    return false;
 }
 signed main()
 {
-    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     cin >> n;
-    for (int i = 1; i <= n * n; i++)
-    {
+    for (int i = 1; i <= n; i++)
         num[i] = 0;
-    }
+
     // for (int i = 1; i <= n; i++)
     // {
     //     for (int j = 1; j <= n; j++)
@@ -90,8 +90,7 @@ signed main()
     {
         cin >> x;
         num[x] = 1;
-        int st = check(n);
-        if (st != -1)
+        if (check(n))
         {
             ans = i;
             cout << ans;
