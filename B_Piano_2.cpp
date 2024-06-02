@@ -6,7 +6,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-#define N (int)1e4+10
+#define N (int)1e4 + 10
 #define f1(i) for (int i = 1; i <= n; i++)
 #define f2(i) for (int i = n; i; i--)
 #define f first
@@ -29,17 +29,21 @@ int pow(int a, int n)
 
 int n, m, x, y, z, ans;
 int a[N], b[N];
+map<int, int> mp;
 signed main()
 {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     cin >> n >> m;
     for (int i = 1; i <= n; i++)
+    {
         cin >> a[i];
+        mp[a[i]]++;
+        if (mp.count(a[i] - 1) != 0 || mp.count(a[i] + 1) != 0)
+         {   cout << "Yes";
+        return 0;}
+    }
     for (int i = 1; i <= m; i++)
         cin >> b[i];
-    for (int i = 1; i <= n; i++)
-        if (abs(a[i] - a[i - 1]) == 1&&a[i]!=1)
-         {   cout << "Yes" << en;return 0;}
-    cout<<"No"<<en;
+    cout << "No" << en;
     return 0;
 }
