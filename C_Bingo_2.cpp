@@ -37,14 +37,17 @@ int check(int n)
     int flag = 0;
     for (int j = 0; j < n; j++)
     {
+        flag = 0;
         for (i = 1 + n * j; i <= n + n * j; i++)
             if (num[i] == 0)
                 flag = 1;
         if (flag == 0)
             return 1;
     }
+    flag = 0;
     for (int j = 1; j <= n; j++)
     {
+        flag = 0;
         for (i = 1 * j; i <= 2 * n + j; i += n)
         {
             if (num[i] == 0)
@@ -53,6 +56,8 @@ int check(int n)
         if (flag == 0)
             return 1;
     }
+    flag = 0;
+
     for (i = 1; i <= n * n; i += n + 1)
     {
         if (num[i] == 0)
@@ -64,15 +69,12 @@ int check(int n)
 }
 signed main()
 {
-    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     cin >> n;
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
-        {
-            g[i][j] = n * (i - 1) + j;
-            num[g[i][j]] = 0;
-        }
-
+    for (int i = 1; i <= n * n; i++)
+    {
+        num[i] = 0;
+    }
     // for (int i = 1; i <= n; i++)
     // {
     //     for (int j = 1; j <= n; j++)
