@@ -1,7 +1,7 @@
 //
 //* @Author: LxAnC
 //* @Email : LxAnC76@gmail.com
-//* @Date  : 2024-06-02 23:15
+//* @Date  : 2024-06-02 23:25
 //
 #include <bits/stdc++.h>
 using namespace std;
@@ -32,24 +32,23 @@ int n, m, x, y, z, ans;
 signed main()
 {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    vector<int> a(13);
-    for (int i = 1; i <= 12; i++)
-        cin >> a[i];
-    int p=0 ;
-    for (int i = 1; i <= 12; i++)
+    vector<int> a(8);
+    for (int i = 1; i <= 7; i++)
     {
-        p+=300;
-        int k=p-a[i];
-        if (k<0)
-        {
-            cout << -i;
-            return 0;
-        }
-        else if(k>=100)
-        ans+=k/100*100,k-=k/100*100;
-        p=k;
+        cin >> x >> y;
+        a[i] = x + y - 8;
+        ans = ma(ans, x + y - 8);
     }
-    ans = p + ans * 1.2;
-    cout<<ans;
+    if (ans != 0)
+    {
+        for (int i = 1; i <= 7; i++)
+            if (a[i] == ans)
+            {
+                cout << i;
+                return 0;
+            }
+    }
+    else
+        cout << ans;
     return 0;
 }
