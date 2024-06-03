@@ -34,9 +34,11 @@ signed main()
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     cin >> n;
     int l;
-    if(n==0)
-    {cout<<0;
-    return 0;}
+    if (n == 0)
+    {
+        cout << 0;
+        return 0;
+    }
     if (n < 0)
     {
         l = -1;
@@ -46,10 +48,7 @@ signed main()
     reverse(s.begin(), s.end());
     if (l == -1)
         cout << "-";
-    for(int i=0,flag=0;i<s.length();i++)
-    {
-        if(s[i]=='0'&&flag==0)continue;
-        cout<<s[i];flag=1;
-    }
+    int b = stoi(s);
+    cout << b;
     return 0;
 }
