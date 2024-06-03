@@ -1,12 +1,12 @@
 //
 //* @Author: LxAnC
 //* @Email : LxAnC76@gmail.com
-//* @Date  : 2024-06-03 10:13
+//* @Date  : 2024-06-03 11:04
 //
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
-#define N 10000
+#define N 1e6 + 10
 #define f1(i) for (int i = 1; i <= n; i++)
 #define f2(i) for (int i = n; i; i--)
 #define f first
@@ -33,22 +33,16 @@ signed main()
 {
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     cin >> n;
-    int a[N];
-    int j = 1;
-    int i;
-    int s = 0;
-    int s1 = 0;
-    for (j = 1; 1; j++)
-    {
-        s += j;
-        if (s >= n)
-            break;
-    }
-    if(j&1)
-    cout <<  1+(s-n)<< "/" << j-(s-n);
-    else
-    cout <<  j-(s-n)<< "/" << 1+(s-n);
-
-    // cout << i - s << "/" << 1 + s << en;
+    int l;
+    if (n < 0)
+         l = -1;
+        n=abs(n);
+    string s = to_string(n);
+    reverse(s.begin(), s.end());
+    if (l == -1)
+        cout << "-";
+    for (auto x : s)
+        if (x != '0')
+            cout<<x;
     return 0;
 }
