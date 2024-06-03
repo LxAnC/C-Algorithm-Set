@@ -36,13 +36,16 @@ signed main()
     int a[N];
     int j = 1;
     int i;
-    for (i = 1; 1; i++)
-        if (n < i * i / 2)
+    int s = 0;
+    int s1 = 0;
+    for (j = 1; j <= n; j++)
+    {
+        s += j;
+        if (s >= n)
             break;
-    int s=0;
-    for(j=1;j<=i;j++)
-    s+=j;
-    s-=n;
-    cout << i-s<<"/"<<1+s << en;
+    }
+    cout << j-(s-n) << "/" << 1+(s-n);
+
+    // cout << i - s << "/" << 1 + s << en;
     return 0;
 }
