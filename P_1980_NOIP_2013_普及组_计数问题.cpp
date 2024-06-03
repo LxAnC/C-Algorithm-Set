@@ -14,7 +14,7 @@ using namespace std;
 #define ma max
 #define mi min
 #define en '\n'
-vector<int>hash1;
+int a[10];
 int pow(int a , int n)
 {
     int q = 1;
@@ -32,7 +32,7 @@ void calcu(int x)
     while(x)
     {
         int b=x%10;
-        hash1[b]++;
+        a[b]++;
         x/=10;
     }
 }
@@ -44,9 +44,7 @@ signed main()
     int k;
     cin>>x>>k;
     for(int i=1;i<=x;i++)
-    {
         calcu(i);
-    }
-    cout<<hash1[k];
+    cout<<a[k];
     return 0;
 }
