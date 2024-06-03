@@ -1,59 +1,36 @@
-/**
- * Copyright © 2024 LxAnC. All rights reserved.
- *
- * @author: LxAnC
- * @date: 2024-04-18
- */
-// 快排
-#include <iostream>
-#include <vector>
+//
+   //* @Author: LxAnC
+   //* @Email : LxAnC76@gmail.com
+   //* @Date  : 2024-06-03 11:51
+//  
+#include <bits/stdc++.h>
 using namespace std;
-int partition(vector<int> &arr, int low, int high)
+#define int long long
+#define N 1e6+10
+#define f1(i)  for(int i=1;i<=n;i++)
+#define f2(i)  for(int i=n;i;i--)
+#define f first
+#define s second
+#define ma max
+#define mi min
+#define en '\n'
+int pow(int a , int n)
 {
-
-    int pivot = arr[high];
-    int i = (low - 1);
-
-    for (int j = low; j <= high - 1; j++)
+    int q = 1;
+    while(n)
     {
-        if (arr[j] <= pivot)
-        {
-            i++;
-        swap(arr[i], arr[j]);
-        }
+      if(n & 1)q = q * a;
+      a *= a;
+      n = n>>1;
     }
-    swap(arr[i + 1], arr[high]);
-    return (i + 1);
+    return q;
 }
 
-void quickSort(vector<int> &arr, int low, int high)
-{
-    if (low < high)
-    {
-        int pi = partition(arr, low, high);
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
-    }
-}
-void quickSortWrapper(vector<int> &arr)
-{
-    quickSort(arr, 0, arr.size() - 1);
-}
-void printArray(const vector<int> &arr)
-{
-    for (int i : arr)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-}
+int n,m,x,y,z,ans;
 
-int main()
+signed main()
 {
-    vector<int> arr = {10, 7, 8, 9, 1, 5};
-    printArray(arr);
-    quickSortWrapper(arr);
-    printArray(arr);
-
+    ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+    
     return 0;
 }
