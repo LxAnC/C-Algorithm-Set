@@ -34,15 +34,22 @@ signed main()
     ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     cin >> n;
     int l;
+    if(n==0)
+    {cout<<0;
+    return 0;}
     if (n < 0)
-         l = -1;
-        n=abs(n);
+    {
+        l = -1;
+        n = abs(n);
+    }
     string s = to_string(n);
     reverse(s.begin(), s.end());
     if (l == -1)
         cout << "-";
-    for (auto x : s)
-        if (x != '0')
-            cout<<x;
+    for(int i=0,flag=0;i<s.length();i++)
+    {
+        if(s[i]=='0'&&flag==0)continue;
+        cout<<s[i];flag=1;
+    }
     return 0;
 }
