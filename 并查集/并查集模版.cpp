@@ -1,4 +1,5 @@
 //洛谷模版第一题
+//20240604
 #include<bits/stdc++.h>
 using namespace std;
 #define N 1000
