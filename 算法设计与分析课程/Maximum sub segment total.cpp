@@ -6,6 +6,7 @@
  */
 #include <bits/stdc++.h>
 // 最大公共子区间的长度
+// 公共
 using namespace std;
 int n;
 const int maxn = 1e5 + 10;
@@ -22,12 +23,11 @@ signed main()
   }
   for (int i = 1; i <= n; i++)
   {
-    dp[i] =max(a[i],dp[i-1]+a[i]);
-    ret=max(dp[i],ret);
+    dp[i] = max(a[i], dp[i - 1] + a[i]);
+    ret = max(dp[i], ret);
   }
-  cout<<ret<<endl;
+  cout << ret << endl;
   return 0;
-
 }
 
 // int solve()
