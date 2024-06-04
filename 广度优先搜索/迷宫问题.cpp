@@ -15,24 +15,26 @@ int dx[] = {1, 0, -1, 0};
 int dy[] = {0, 1, 0, -1}; // 代表的各个方向可以走的
 long long bfs(int x1, int y1)
 {
-  memset(dist,-1,sizeof dist);
-  s.push({x1,y1});
-  dist[x1][y1]=0;
-  while(!s.empty())
+  memset(dist, -1, sizeof dist);
+  s.push({x1, y1});
+  dist[x1][y1] = 0;
+  while (!s.empty())
   {
-    auto q=s.front();
+    auto q = s.front();
     s.pop();
-    for(int i=0;i<4;i++)
+    for (int i = 0; i < 4; i++)
     {
-       int sx=q.first+dx[i];
-       int sy=q.second+dy[i];
-       if(sx<1||sx>n||sy<1||sy>n)continue;
-       if(mp[sx][sy]!=0)continue;
-       if(dist[sx][sy]>0)continue;
-       s.push({sx,sy});
-       dist[sx][sy]=dist[q.first][q.second]+1;
+      int sx = q.first + dx[i];
+      int sy = q.second + dy[i];
+      if (sx < 1 || sx > n || sy < 1 || sy > n)
+        continue;
+      if (mp[sx][sy] != 0)
+        continue;
+      if (dist[sx][sy] > 0)
+        continue;
+      s.push({sx, sy});
+      dist[sx][sy] = dist[q.first][q.second] + 1;
     }
-   
   }
   return dist[n][n];
 }
@@ -46,6 +48,6 @@ int main()
       cin >> mp[i][j];
     }
   long long ret = bfs(1, 1);
-  cout<<ret;
+  cout << ret;
   return 0;
 }
