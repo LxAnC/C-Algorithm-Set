@@ -7,6 +7,7 @@
 // 还有这篇https://www.cnblogs.com/Last--Whisper/p/13823614.html#%E4%BB%80%E4%B9%88%E6%98%AF-bit-
 // https://blog.csdn.net/TheWayForDream/article/details/118436732
 // 以上的链接可以配合使用
+//20240604留
 #include <bits/stdc++.h>
 using namespace std;
 #define MAXN 50005
