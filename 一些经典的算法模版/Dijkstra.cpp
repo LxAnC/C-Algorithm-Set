@@ -10,7 +10,7 @@ int dist[maxn];    // 代表距离
 int g[maxn][maxn]; // 地图
 bool st[maxn];     // 代表有没有存过
 
-// 数据
+
 //  6 10
 //  1 2 4
 //  1 3 8
@@ -100,6 +100,5 @@ signed main()
 //     {
 //         cout << dist[i];
 //         cout << endl;
-//     }//输出所有的距离
 //     // cout<<dist[n]<<endl;//最后一个即我们需要的值
 // }
