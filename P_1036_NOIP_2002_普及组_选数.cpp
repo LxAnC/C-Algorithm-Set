@@ -29,27 +29,25 @@ int pow(int a, int n)
 
 int n, m, x, y, z, ans;
 vector<int> a(N);
-void check(int sum)
+bool check(int sum)
 {
     int i;
     for (i = 2; i * i <= sum; i++)
         if (sum % i == 0)
-            break;
-    if (i * i > sum)
-        ans++;
+            return false;
+    return true;
 }
 int dfs(int k, int sum, int start)
 {
     if (k == y)
     {
-        check(sum);
+        if (check(sum))
+            ans++;
         return 0;
     }
     for (int i = start; i < n; i++)
     {
-        if (a[i] != -1)
-            dfs(k + 1, sum += a[i], i + 1);
-        a[i] = -1;
+        dfs(k + 1, sum += a[i], i + 1);
     }
     return 0;
 }
