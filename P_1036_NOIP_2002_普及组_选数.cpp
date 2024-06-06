@@ -47,9 +47,9 @@ int dfs(int k, int sum, int start)
     }
     for (int i = start; i < n; i++)
     {
-        if(s[i]!=0)
         dfs(k + 1, sum += a[i], i + 1);
     }
+    return 0;
 }
 signed main()
 {
@@ -59,5 +59,6 @@ signed main()
     for (int i = 1; i <= 4; i++)
         cin >> a[i - 1];
     dfs(0, 0, 0);
+    cout<<ans;
     return 0;
 }
