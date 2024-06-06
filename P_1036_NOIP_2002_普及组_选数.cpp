@@ -47,7 +47,9 @@ int dfs(int k, int sum, int start)
     }
     for (int i = start; i < n; i++)
     {
+        if(a[i]!=0)
         dfs(k + 1, sum += a[i], i + 1);
+        a[i]=0;
     }
     return 0;
 }
