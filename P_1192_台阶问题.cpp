@@ -28,18 +28,37 @@ int pow(int a , int n)
 int k;
 int n,m,x,y,z,ans;
 
-signed main()
+// signed main()
+// {
+//     ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+//     cin>>n>>k; 
+//     vector<int>dp(n+1);
+//     dp[0]=dp[1]=1;
+//     for(int i=2;i<=n;i++)
+//     for(int j=1;j<=k;j++)
+//     {
+//         if(i>=j)
+//         dp[i]+=dp[i-j];
+//     }
+//     cout<<dp[n];
+//     return 0;
+// }
+int main()
 {
-    ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
-    cin>>n>>k; 
-    vector<int>dp(n+1);
-    dp[0]=dp[1]=1;
-    for(int i=2;i<=n;i++)
-    for(int j=1;j<=k;j++)
-    {
-        if(i>=j)
-        dp[i]+=dp[i-j];
-    }
-    cout<<dp[n];
+	cin>>n>>k;
+	a[0]=a[1]=1;
+	for(int i=2;i<=n;++i)
+	{
+		if(i<=k)
+		{
+			a[i]=(a[i-1]*2)%mod;
+		}
+		else 
+		{
+			a[i]=(a[i-1]*2-a[i-k-1])%mod;
+		}
+	}
+	ans=(a[n]+mod)%mod;
+    cout<<ans;
     return 0;
 }
