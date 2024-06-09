@@ -34,7 +34,7 @@ signed main()
     cin>>x>>y;
     cin>>n;
     int d=y-x;
-    double ans=n*(x+x+(n-1)*d)/2.0;
+    ans=n*(x+x+(n-1)*d)/2;
     cout<<ans;
     return 0;
 }
