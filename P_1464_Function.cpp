@@ -26,13 +26,13 @@ int pow(int a, int n)
   }
   return q;
 }
-
+int dp[25][25][25];
 int n, m, x, y, z, ans;
 int check1(int a, int b, int c)
 {
   int ret;
   if (a <= 0 || b <= 0 || c <= 0)
-    return 1;
+    dp[a][b][c]=1;
   else if (a > 20 || b > 20 || c > 20)
     return check1(20, 20, 20);
   else if (a < b && b < c)
