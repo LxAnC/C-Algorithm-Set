@@ -46,7 +46,7 @@ void cb(int tr, int tc, int dr, int dc, int sise)
     else 
     {
         board[tr+s-1][tc+s]=t;
-        cb()
+        
     }
 }
 signed main()
