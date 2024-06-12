@@ -27,13 +27,13 @@ int pow(int a, int n)
     return q;
 }
 
-int n, m, x, y, z, ans, tile = 1, size1;
-void cb(int tr, int tc, int dr, int dc, int sise)
+int n, m, x, y, z, ans, tile = 1, s;
+void cb(int tr, int tc, int dr, int dc, int size2)
 {
     if (s == 1)
         return;
     int t = tile++;
-    s = sise / 2;
+    s = size2 / 2;
     if (dr < tr + s && dc < tc + s)
         cb(tr, tc, dr, dc, s);
     else
@@ -41,12 +41,26 @@ void cb(int tr, int tc, int dr, int dc, int sise)
         board[tr + s - 1][tc + s - 1] = t;
         cb(tr, tc, tr + s - 1, tc + s - 1, s);
     }
-    if (dr < tr + s && dc >= tr + s)
-        cb(tr, tc + s, dr, dc, s); 
+    if (dr < tr + s && dc >= tc + s)
+        cb(tr, tc + s, dr, dc, s);
+    else
+    {
+        board[tr + s - 1][tc + s] = t;
+        cb(tr, tc + s, tr + s - 1, tc + s, s);
+    }
+    if(dc<tc+s&&dr>=tr+s)
+    cb(tr+s,tc,dr,dc,s);
+    else
+    {
+    board[tr+s][tc+s-1]=t;
+    cb(tr+s,tc,tr+s,tc+s-1,s);
+    }
+    if(dr>=tr+s&&dc>=tc+s)
+    cb(tr+s,tc+s,dr,dc,s);
     else 
     {
-        board[tr+s-1][tc+s]=t;
-        
+        board[tr+s][tc+s]=t;
+        cb(tr+s,tc+s,tr+s,tc+s,s);
     }
 }
 signed main()
